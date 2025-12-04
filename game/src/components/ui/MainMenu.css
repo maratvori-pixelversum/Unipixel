@@ -1,0 +1,503 @@
+/* Smart responsive design with automatic resolution adjustment */
+.main-menu {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background: var(--menu-bg);
+  color: var(--menu-text);
+  font-family: 'DigitalDisco', 'Courier New', monospace;
+  overflow: hidden;
+
+  /* Use responsive scaling system */
+  font-size: var(--responsive-base);
+}
+
+/* Industrial space station background effects (Alien 1979 style) */
+.menu-bg-effects {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 0;
+  transform-style: preserve-3d;
+}
+
+/* Pixelated metal texture */
+.menu-bg-effects::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image:
+    repeating-linear-gradient(0deg, transparent, transparent 3px, rgba(0, 0, 0, 0.08) 3px, rgba(0, 0, 0, 0.08) 6px),
+    repeating-linear-gradient(90deg, transparent, transparent 3px, rgba(0, 0, 0, 0.08) 3px, rgba(0, 0, 0, 0.08) 6px);
+  opacity: 0.4;
+  image-rendering: pixelated;
+  transform: translateZ(8px);
+}
+
+/* Industrial rivets and panels */
+.menu-bg-effects::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image:
+    radial-gradient(circle at 25px 25px, rgba(0, 0, 0, 0.2) 2px, transparent 2px),
+    radial-gradient(circle at 25px 25px, rgba(255, 255, 255, 0.1) 1px, transparent 1px);
+  background-size: 150px 150px;
+  background-position: 0 0, 75px 75px;
+  opacity: 0.3;
+  image-rendering: pixelated;
+  transform: translateZ(12px);
+}
+
+.stars-field {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image:
+    radial-gradient(2px 2px at 120px 150px, rgba(255, 255, 255, 0.2), transparent),
+    radial-gradient(1px 1px at 320px 280px, rgba(255, 255, 255, 0.15), transparent),
+    radial-gradient(1px 1px at 680px 420px, rgba(255, 255, 255, 0.1), transparent),
+    radial-gradient(2px 2px at 1050px 180px, rgba(255, 255, 255, 0.18), transparent),
+    radial-gradient(1px 1px at 1450px 520px, rgba(255, 255, 255, 0.12), transparent);
+  background-size: 600px 600px;
+  background-position: 0 0, 60px 90px, 195px 405px, 105px 150px, 300px 75px;
+  animation: stars-drift 180s linear infinite;
+  transform: translateZ(5px);
+  image-rendering: pixelated;
+}
+
+@keyframes stars-drift {
+  0% {
+    transform: translateZ(5px) translateY(0);
+  }
+  100% {
+    transform: translateZ(5px) translateY(-600px);
+  }
+}
+
+.void-pulses {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 200%;
+  height: 200%;
+  transform: translate(-50%, -50%);
+  background: radial-gradient(
+    ellipse at center,
+    rgba(255, 140, 0, 0.06) 0%,
+    transparent 50%
+  );
+  animation: void-pulse 15s ease-in-out infinite;
+  transform-origin: center;
+}
+
+@keyframes void-pulse {
+  0%, 100% {
+    opacity: 0.2;
+    transform: translate(-50%, -50%) translateZ(15px) scale(1);
+  }
+  50% {
+    opacity: 0.4;
+    transform: translate(-50%, -50%) translateZ(20px) scale(1.1);
+  }
+}
+
+/* Industrial station grime/dust overlay */
+.blood-fog {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 50%;
+  background: linear-gradient(
+    to top,
+    rgba(30, 30, 30, 0.4) 0%,
+    rgba(20, 25, 20, 0.2) 40%,
+    transparent 100%
+  );
+  opacity: 0.6;
+  animation: fog-drift 25s ease-in-out infinite;
+  transform: translateZ(10px);
+}
+
+@keyframes fog-drift {
+  0%, 100% {
+    opacity: 0.5;
+    transform: translateZ(10px) translateY(0);
+  }
+  50% {
+    opacity: 0.7;
+    transform: translateZ(15px) translateY(-10px);
+  }
+}
+
+/* Logo with enhanced 3D depth */
+.menu-logo {
+  position: relative;
+  z-index: 1;
+  text-align: center;
+  margin-bottom: 50px;
+  transform-style: preserve-3d;
+  transform: translateZ(50px);
+}
+
+.logo-art {
+  font-size: 14px;
+  line-height: 1.1;
+  color: var(--menu-accent);
+  text-shadow:
+    0 0 15px var(--menu-glow),
+    0 0 30px var(--menu-glow),
+    2px 2px 0 rgba(0, 0, 0, 0.6);
+  animation: logo-glitch 5s ease-in-out infinite;
+  margin: 0;
+  image-rendering: pixelated;
+  image-rendering: crisp-edges;
+  filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.7));
+}
+
+@keyframes logo-glitch {
+  0%, 90%, 100% {
+    transform: translateX(0) translateZ(30px);
+    opacity: 1;
+  }
+  91% {
+    transform: translateX(-3px) translateZ(28px) skew(-1deg);
+    opacity: 0.9;
+  }
+  92% {
+    transform: translateX(3px) translateZ(32px) skew(1deg);
+    opacity: 0.95;
+  }
+  93% {
+    transform: translateX(0) translateZ(30px);
+    opacity: 1;
+  }
+}
+
+.logo-subtitle {
+  font-size: var(--responsive-large);
+  color: var(--menu-text);
+  margin-top: var(--spacing-sm);
+  letter-spacing: 0.3em;
+  text-shadow:
+    0 0 12px var(--menu-glow),
+    2px 2px 0 rgba(0, 0, 0, 0.6);
+  transform: translateZ(25px);
+}
+
+.logo-version {
+  font-size: var(--responsive-base);
+  color: var(--menu-text);
+  opacity: 0.6;
+  margin-top: var(--spacing-xs);
+  letter-spacing: 0.2em;
+  text-shadow: 1px 1px 0 rgba(0, 0, 0, 0.5);
+  transform: translateZ(20px);
+}
+
+/* Menu panel with 3D depth */
+.menu-panel {
+  position: relative;
+  z-index: 1;
+  margin-bottom: 30px;
+  transform-style: preserve-3d;
+  transform: translateZ(40px);
+  filter: drop-shadow(0 8px 16px rgba(0, 0, 0, 0.8));
+}
+
+.menu-items {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  padding: 15px;
+}
+
+/* Menu item with enhanced depth */
+.menu-item {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-sm);
+  padding: var(--spacing-md) var(--spacing-lg);
+  font-size: var(--responsive-large);
+  cursor: pointer;
+  transition: all 0.2s ease;
+  user-select: none;
+  touch-action: manipulation;
+  -webkit-tap-highlight-color: transparent;
+  position: relative;
+  letter-spacing: 0.1em;
+  min-height: clamp(45px, calc(55px * var(--ui-scale)), 70px);
+  transform-style: preserve-3d;
+  text-shadow: 1px 1px 0 rgba(0, 0, 0, 0.5);
+}
+
+.menu-item::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 3px;
+  height: 100%;
+  background: transparent;
+  transition: all 0.2s ease;
+}
+
+.menu-item:not(.disabled):hover {
+  background: rgba(255, 255, 255, 0.05);
+  transform: translateX(5px) translateZ(5px);
+}
+
+.menu-item:not(.disabled):hover::before {
+  background: var(--menu-accent);
+  box-shadow: 0 0 10px var(--menu-glow);
+}
+
+.menu-item.selected:not(.disabled) {
+  background: rgba(255, 140, 0, 0.2);
+  color: var(--menu-accent);
+  text-shadow:
+    0 0 12px var(--menu-glow),
+    0 0 24px var(--menu-glow),
+    2px 2px 0 rgba(0, 0, 0, 0.6);
+  animation: menu-pulse 2s ease-in-out infinite;
+  transform: translateX(8px) translateZ(8px);
+}
+
+.menu-item.selected:not(.disabled)::before {
+  background: var(--menu-accent);
+  box-shadow: 0 0 15px var(--menu-glow);
+  width: 4px;
+}
+
+@keyframes menu-pulse {
+  0%, 100% {
+    background: rgba(255, 140, 0, 0.2);
+  }
+  50% {
+    background: rgba(255, 140, 0, 0.35);
+  }
+}
+
+.menu-item.disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+  pointer-events: none;
+}
+
+.menu-arrow {
+  width: 25px;
+  font-size: 24px;
+  color: var(--menu-accent);
+  text-shadow:
+    0 0 10px var(--menu-glow),
+    2px 2px 0 rgba(0, 0, 0, 0.5);
+  flex-shrink: 0;
+  animation: arrow-pulse 2s ease-in-out infinite;
+}
+
+@keyframes arrow-pulse {
+  0%, 100% {
+    transform: translateX(0);
+  }
+  50% {
+    transform: translateX(3px);
+  }
+}
+
+.menu-icon {
+  width: 30px;
+  font-size: 24px;
+  text-align: center;
+  flex-shrink: 0;
+}
+
+.menu-label {
+  flex-grow: 1;
+  font-weight: bold;
+}
+
+.disabled-text {
+  opacity: 0.6;
+  font-size: 0.9em;
+  font-weight: normal;
+}
+
+/* Status bar with depth */
+.menu-status-bar {
+  position: relative;
+  z-index: 1;
+  margin-top: 15px;
+  transform: translateZ(35px);
+}
+
+.status-info {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  font-size: 16px;
+  letter-spacing: 0.05em;
+  justify-content: center;
+  flex-wrap: wrap;
+  text-shadow: 1px 1px 0 rgba(0, 0, 0, 0.5);
+}
+
+.status-separator {
+  opacity: 0.5;
+}
+
+/* Exit confirmation modal with 3D depth */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.85);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 100;
+  animation: modal-fade-in 0.3s ease;
+  backdrop-filter: blur(4px);
+}
+
+@keyframes modal-fade-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.exit-confirm-panel {
+  animation: modal-slide-in 0.3s ease;
+  transform-style: preserve-3d;
+  transform: translateZ(60px);
+  filter: drop-shadow(0 10px 20px rgba(0, 0, 0, 0.9));
+}
+
+@keyframes modal-slide-in {
+  from {
+    transform: translateY(-60px) translateZ(60px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0) translateZ(60px);
+    opacity: 1;
+  }
+}
+
+.exit-confirm-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 25px;
+  padding: 15px;
+}
+
+.confirm-message {
+  font-size: 26px;
+  color: var(--menu-accent);
+  text-shadow:
+    0 0 15px var(--menu-glow),
+    2px 2px 0 rgba(0, 0, 0, 0.6);
+  text-align: center;
+  margin: 0;
+}
+
+.confirm-warning {
+  font-size: 18px;
+  opacity: 0.8;
+  text-align: center;
+  margin: 0;
+  text-shadow: 1px 1px 0 rgba(0, 0, 0, 0.5);
+}
+
+.confirm-buttons {
+  display: flex;
+  gap: 25px;
+  margin-top: 15px;
+}
+
+/* Control hints with depth */
+.control-hints {
+  position: absolute;
+  bottom: 30px;
+  right: 30px;
+  display: flex;
+  gap: 25px;
+  font-size: 16px;
+  color: var(--menu-text);
+  opacity: 0.6;
+  z-index: 1;
+  transform: translateZ(30px);
+}
+
+.hint {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  text-shadow: 1px 1px 0 rgba(0, 0, 0, 0.5);
+}
+
+.hint-key {
+  background: rgba(255, 255, 255, 0.1);
+  padding: 6px 12px;
+  border: 2px solid rgba(255, 255, 255, 0.2);
+  border-radius: 3px;
+  font-weight: bold;
+  letter-spacing: 0.05em;
+  box-shadow:
+    inset 0 1px 2px rgba(255, 255, 255, 0.1),
+    0 2px 4px rgba(0, 0, 0, 0.5);
+  image-rendering: pixelated;
+}
+
+/* Scanline effect */
+.main-menu::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: repeating-linear-gradient(
+    0deg,
+    rgba(0, 0, 0, 0.15) 0px,
+    transparent 1px,
+    transparent 2px,
+    rgba(0, 0, 0, 0.15) 3px
+  );
+  pointer-events: none;
+  z-index: 999;
+  animation: scanline-move 8s linear infinite;
+  image-rendering: pixelated;
+}
+
+@keyframes scanline-move {
+  0% {
+    transform: translateY(0);
+  }
+  100% {
+    transform: translateY(4px);
+  }
+}

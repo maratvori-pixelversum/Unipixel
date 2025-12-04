@@ -1,0 +1,576 @@
+/* Responsive design - works on all screen sizes */
+.settings-screen {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background: var(--settings-bg);
+  color: var(--settings-text);
+  font-family: 'DigitalDisco', 'Courier New', monospace;
+  overflow-y: auto;
+  overflow-x: hidden;
+  z-index: 1000;
+  padding: 20px;
+  image-rendering: pixelated;
+  image-rendering: crisp-edges;
+  perspective: 2000px;
+  transform-style: preserve-3d;
+}
+
+/* Background effects */
+.settings-bg-effects {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* Container */
+.settings-container {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 25px;
+  width: 100%;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+/* Title section */
+.settings-title {
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+.settings-title h1 {
+  font-size: 32px;
+  color: var(--settings-accent);
+  text-shadow:
+    0 0 10px var(--settings-glow),
+    0 0 20px var(--settings-glow);
+  margin: 0 0 10px 0;
+  letter-spacing: 0.15em;
+  font-weight: normal;
+  animation: title-flicker 4s ease-in-out infinite;
+}
+
+@keyframes title-flicker {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.95;
+  }
+}
+
+.settings-title p {
+  font-size: 14px;
+  color: var(--settings-text);
+  opacity: 0.7;
+  margin: 0;
+  letter-spacing: 0.2em;
+}
+
+/* Main panel */
+.settings-panel {
+  width: 100%;
+  max-width: 900px;
+}
+
+/* Tab navigation */
+.settings-tabs {
+  display: flex;
+  gap: 0;
+  border-bottom: 2px solid var(--settings-border);
+  margin-bottom: 20px;
+  flex-wrap: wrap;
+}
+
+.settings-tab {
+  flex: 1;
+  min-width: 120px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 5px;
+  padding: 12px 20px;
+  background: rgba(0, 0, 0, 0.3);
+  border: 1px solid var(--settings-border);
+  border-bottom: none;
+  color: var(--settings-text);
+  font-family: 'DigitalDisco', 'Courier New', monospace;
+  font-size: 14px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  opacity: 0.6;
+  position: relative;
+  touch-action: manipulation;
+}
+
+.settings-tab:hover {
+  opacity: 0.9;
+  background: rgba(0, 0, 0, 0.5);
+}
+
+.settings-tab.active {
+  opacity: 1;
+  background: rgba(0, 0, 0, 0.6);
+  border-color: var(--settings-accent);
+  color: var(--settings-accent);
+  box-shadow:
+    inset 0 0 15px var(--settings-glow),
+    0 -2px 10px var(--settings-glow);
+}
+
+.settings-tab.active::after {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: var(--settings-accent);
+  box-shadow: 0 0 10px var(--settings-glow);
+}
+
+.tab-icon {
+  font-size: 20px;
+  text-shadow: 0 0 8px var(--settings-glow);
+}
+
+.tab-label {
+  letter-spacing: 0.1em;
+  font-size: 12px;
+}
+
+/* Tab content */
+.settings-tab-content {
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+  padding: 10px;
+  min-height: 400px;
+  max-height: 500px;
+  overflow-y: auto;
+  overflow-x: hidden;
+}
+
+/* Custom scrollbar for content area */
+.settings-tab-content::-webkit-scrollbar {
+  width: 10px;
+}
+
+.settings-tab-content::-webkit-scrollbar-track {
+  background: rgba(0, 0, 0, 0.3);
+  border-left: 1px solid var(--settings-border);
+}
+
+.settings-tab-content::-webkit-scrollbar-thumb {
+  background: var(--settings-accent);
+  box-shadow: inset 0 0 5px var(--settings-glow);
+}
+
+.settings-tab-content::-webkit-scrollbar-thumb:hover {
+  background: var(--settings-text);
+}
+
+/* Settings groups */
+.settings-group {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  padding: 15px;
+  background: rgba(0, 0, 0, 0.3);
+  border: 1px solid var(--settings-border);
+  box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.5);
+}
+
+.group-title {
+  font-size: 16px;
+  color: var(--settings-accent);
+  text-shadow: 0 0 8px var(--settings-glow);
+  margin: 0 0 8px 0;
+  padding-bottom: 8px;
+  border-bottom: 1px solid var(--settings-border);
+  letter-spacing: 0.1em;
+  font-weight: normal;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+/* Slider controls */
+.slider-control {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  padding: 10px;
+  background: rgba(0, 0, 0, 0.4);
+  border: 1px solid var(--settings-border);
+}
+
+.slider-label {
+  font-size: 12px;
+  color: var(--settings-text);
+  letter-spacing: 0.05em;
+  opacity: 0.9;
+}
+
+.terminal-slider {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 100%;
+  height: 8px;
+  background: rgba(0, 0, 0, 0.6);
+  border: 1px solid var(--settings-border);
+  outline: none;
+  cursor: pointer;
+  position: relative;
+}
+
+.terminal-slider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 20px;
+  height: 20px;
+  background: var(--settings-accent);
+  border: 2px solid var(--settings-text);
+  cursor: pointer;
+  box-shadow:
+    0 0 10px var(--settings-glow),
+    inset 0 0 5px rgba(0, 0, 0, 0.5);
+  image-rendering: pixelated;
+}
+
+.terminal-slider::-moz-range-thumb {
+  width: 20px;
+  height: 20px;
+  background: var(--settings-accent);
+  border: 2px solid var(--settings-text);
+  cursor: pointer;
+  box-shadow:
+    0 0 10px var(--settings-glow),
+    inset 0 0 5px rgba(0, 0, 0, 0.5);
+  image-rendering: pixelated;
+}
+
+.terminal-slider:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+}
+
+.terminal-slider:disabled::-webkit-slider-thumb {
+  cursor: not-allowed;
+  background: var(--settings-border);
+}
+
+.terminal-slider:disabled::-moz-range-thumb {
+  cursor: not-allowed;
+  background: var(--settings-border);
+}
+
+/* Volume controls */
+.volume-control {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+/* Keybind list */
+.keybind-list {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  padding: 10px;
+  background: rgba(0, 0, 0, 0.4);
+  border: 1px solid var(--settings-border);
+}
+
+.keybind-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 8px 10px;
+  background: rgba(0, 0, 0, 0.3);
+  border-left: 2px solid var(--settings-accent);
+  font-size: 12px;
+  gap: 15px;
+}
+
+.keybind-action {
+  color: var(--settings-text);
+  opacity: 0.8;
+  letter-spacing: 0.05em;
+}
+
+.keybind-key {
+  color: var(--settings-accent);
+  text-shadow: 0 0 5px var(--settings-glow);
+  letter-spacing: 0.05em;
+  font-weight: bold;
+  text-align: right;
+}
+
+/* Subsection indent */
+.subsection-indent {
+  margin-left: 20px;
+  padding-left: 15px;
+  border-left: 2px solid var(--settings-border);
+}
+
+/* Action buttons */
+.settings-actions {
+  display: flex;
+  gap: 15px;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  margin-top: 10px;
+}
+
+/* Mobile responsive */
+@media (max-width: 600px) {
+  .settings-screen {
+    padding: 10px;
+  }
+
+  .settings-container {
+    gap: 15px;
+  }
+
+  .settings-title h1 {
+    font-size: 20px;
+    letter-spacing: 0.1em;
+  }
+
+  .settings-title p {
+    font-size: 10px;
+  }
+
+  .settings-tabs {
+    gap: 5px;
+  }
+
+  .settings-tab {
+    min-width: 80px;
+    padding: 10px 8px;
+    font-size: 10px;
+  }
+
+  .tab-icon {
+    font-size: 16px;
+  }
+
+  .tab-label {
+    font-size: 9px;
+  }
+
+  .settings-tab-content {
+    gap: 15px;
+    padding: 5px;
+    min-height: 300px;
+    max-height: 400px;
+  }
+
+  .settings-group {
+    padding: 12px;
+    gap: 10px;
+  }
+
+  .group-title {
+    font-size: 13px;
+  }
+
+  .slider-control {
+    padding: 8px;
+  }
+
+  .slider-label {
+    font-size: 10px;
+  }
+
+  .keybind-item {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 5px;
+  }
+
+  .keybind-key {
+    text-align: left;
+  }
+
+  .settings-actions {
+    flex-direction: column;
+    width: 100%;
+    gap: 10px;
+  }
+
+  .settings-actions button {
+    width: 100%;
+  }
+}
+
+/* Tablet responsive */
+@media (min-width: 601px) and (max-width: 900px) {
+  .settings-title h1 {
+    font-size: 26px;
+  }
+
+  .settings-title p {
+    font-size: 12px;
+  }
+
+  .settings-tab {
+    min-width: 100px;
+    padding: 12px 15px;
+  }
+
+  .tab-label {
+    font-size: 11px;
+  }
+
+  .settings-tab-content {
+    gap: 20px;
+  }
+}
+
+/* Desktop large screens */
+@media (min-width: 1200px) {
+  .settings-title h1 {
+    font-size: 36px;
+  }
+
+  .settings-title p {
+    font-size: 16px;
+  }
+
+  .settings-tab-content {
+    max-height: 600px;
+  }
+}
+
+/* Focus states for accessibility */
+.settings-tab:focus {
+  outline: none;
+  box-shadow:
+    0 0 0 2px var(--settings-bg),
+    0 0 0 4px var(--settings-accent),
+    0 0 15px var(--settings-glow);
+}
+
+.terminal-slider:focus {
+  box-shadow: 0 0 0 2px var(--settings-accent);
+}
+
+/* Animation for panel entrance */
+.settings-panel {
+  animation: panel-fade-in 0.5s ease-out;
+}
+
+@keyframes panel-fade-in {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Industrial glow on active elements */
+.settings-tab.active .tab-icon {
+  animation: icon-glow 2s ease-in-out infinite;
+}
+
+@keyframes icon-glow {
+  0%, 100% {
+    text-shadow: 0 0 8px var(--settings-glow);
+  }
+  50% {
+    text-shadow:
+      0 0 15px var(--settings-glow),
+      0 0 25px var(--settings-glow);
+  }
+}
+
+/* Touch feedback for mobile */
+@media (hover: none) {
+  .settings-tab:active {
+    transform: scale(0.95);
+    background: rgba(0, 0, 0, 0.7);
+  }
+}
+
+/* Hover effects for desktop */
+@media (hover: hover) {
+  .settings-tab:hover .tab-icon {
+    transform: scale(1.1);
+  }
+
+  .terminal-slider:hover::-webkit-slider-thumb {
+    transform: scale(1.2);
+  }
+
+  .terminal-slider:hover::-moz-range-thumb {
+    transform: scale(1.2);
+  }
+}
+
+/* Scanline overlay on groups */
+.settings-group::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: repeating-linear-gradient(
+    0deg,
+    transparent 0px,
+    transparent 2px,
+    rgba(0, 0, 0, 0.1) 2px,
+    rgba(0, 0, 0, 0.1) 4px
+  );
+  pointer-events: none;
+  opacity: 0.2;
+}
+/* Pixelated scanline effect */
+.settings-screen::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: repeating-linear-gradient(
+    0deg,
+    rgba(0, 0, 0, 0.15) 0px,
+    transparent 1px,
+    transparent 2px,
+    rgba(0, 0, 0, 0.15) 3px
+  );
+  pointer-events: none;
+  z-index: 999;
+  animation: scanline-move 8s linear infinite;
+  image-rendering: pixelated;
+}
+
+@keyframes scanline-move {
+  0% {
+    transform: translateY(0);
+  }
+  100% {
+    transform: translateY(4px);
+  }
+}

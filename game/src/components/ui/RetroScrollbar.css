@@ -1,0 +1,129 @@
+/**
+ * Global Retro Sci-Fi Scrollbar Styling
+ * Heavily pixelated scrollbars matching cockpit aesthetic
+ */
+
+/* Webkit browsers (Chrome, Safari, Edge) */
+::-webkit-scrollbar {
+  width: 16px;
+  height: 16px;
+}
+
+::-webkit-scrollbar-track {
+  background: #1a1a1a;
+  border: 2px solid #3a3a3a;
+  box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.6);
+  /* Pixelated pattern */
+  background-image:
+    repeating-linear-gradient(90deg, #1a1a1a 0px, #1a1a1a 2px, #222222 2px, #222222 4px),
+    repeating-linear-gradient(0deg, #1a1a1a 0px, #1a1a1a 2px, #222222 2px, #222222 4px);
+}
+
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(180deg, #5a6a7a 0%, #3a4a5a 50%, #2a3a4a 100%);
+  border: 2px solid #4a5a6a;
+  box-shadow:
+    inset 0 0 6px rgba(255, 255, 255, 0.1),
+    0 0 6px rgba(0, 0, 0, 0.5);
+  /* Pixelated grip pattern */
+  background-image:
+    repeating-linear-gradient(90deg, transparent 0px, transparent 3px, rgba(255,255,255,0.1) 3px, rgba(255,255,255,0.1) 4px),
+    repeating-linear-gradient(0deg, transparent 0px, transparent 3px, rgba(255,255,255,0.1) 3px, rgba(255,255,255,0.1) 4px);
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(180deg, #6a7a8a 0%, #4a5a6a 50%, #3a4a5a 100%);
+  border-color: #5a6a7a;
+  box-shadow:
+    inset 0 0 8px rgba(255, 255, 255, 0.2),
+    0 0 8px rgba(102, 136, 170, 0.4);
+}
+
+::-webkit-scrollbar-thumb:active {
+  background: linear-gradient(180deg, #4a5a6a 0%, #3a4a5a 50%, #2a3a4a 100%);
+  border-color: #3a4a5a;
+}
+
+::-webkit-scrollbar-button {
+  background: #2a3a4a;
+  border: 2px solid #3a4a5a;
+  height: 16px;
+  width: 16px;
+}
+
+::-webkit-scrollbar-button:hover {
+  background: #3a4a5a;
+  border-color: #4a5a6a;
+}
+
+/* Up arrow */
+::-webkit-scrollbar-button:vertical:decrement {
+  background-image: linear-gradient(135deg, transparent 40%, #6a7a8a 40%, #6a7a8a 60%, transparent 60%);
+}
+
+/* Down arrow */
+::-webkit-scrollbar-button:vertical:increment {
+  background-image: linear-gradient(45deg, transparent 40%, #6a7a8a 40%, #6a7a8a 60%, transparent 60%);
+}
+
+/* Left arrow */
+::-webkit-scrollbar-button:horizontal:decrement {
+  background-image: linear-gradient(45deg, transparent 40%, #6a7a8a 40%, #6a7a8a 60%, transparent 60%);
+}
+
+/* Right arrow */
+::-webkit-scrollbar-button:horizontal:increment {
+  background-image: linear-gradient(-45deg, transparent 40%, #6a7a8a 40%, #6a7a8a 60%, transparent 60%);
+}
+
+::-webkit-scrollbar-corner {
+  background: #1a1a1a;
+  border: 2px solid #3a3a3a;
+}
+
+/* Firefox */
+* {
+  scrollbar-width: auto;
+  scrollbar-color: #3a4a5a #1a1a1a;
+}
+
+/* Global pixelated image rendering */
+img, canvas {
+  image-rendering: pixelated;
+  image-rendering: -moz-crisp-edges;
+  image-rendering: crisp-edges;
+}
+
+/* Disable smooth scrolling for retro feel */
+html {
+  scroll-behavior: auto;
+}
+
+/* Add scan lines effect to body */
+body::before {
+  content: '';
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: repeating-linear-gradient(
+    0deg,
+    transparent 0px,
+    transparent 2px,
+    rgba(0, 0, 0, 0.03) 2px,
+    rgba(0, 0, 0, 0.03) 3px
+  );
+  pointer-events: none;
+  z-index: 9999;
+  animation: scanline-drift 8s linear infinite;
+}
+
+@keyframes scanline-drift {
+  0% {
+    transform: translateY(0);
+  }
+  100% {
+    transform: translateY(4px);
+  }
+}

@@ -1,0 +1,350 @@
+/* Responsive design - works on all screen sizes */
+.loading-screen {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background: var(--loading-bg);
+  color: var(--loading-text);
+  font-family: 'DigitalDisco', 'Courier New', monospace;
+  overflow: hidden;
+  z-index: 1000;
+}
+
+/* Industrial station background (Alien 1979 style) with 3D depth */
+.loading-bg-anim {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 0;
+  transform-style: preserve-3d;
+}
+
+/* Pixelated metal texture overlay */
+.loading-bg-anim::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image:
+    repeating-linear-gradient(0deg, transparent, transparent 2px, rgba(0, 0, 0, 0.1) 2px, rgba(0, 0, 0, 0.1) 4px),
+    repeating-linear-gradient(90deg, transparent, transparent 2px, rgba(0, 0, 0, 0.1) 2px, rgba(0, 0, 0, 0.1) 4px);
+  opacity: 0.3;
+  image-rendering: pixelated;
+  transform: translateZ(10px);
+}
+
+/* Industrial panel grid pattern */
+.loading-bg-anim::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image:
+    linear-gradient(0deg, transparent 24%, rgba(255, 255, 255, 0.05) 25%, rgba(255, 255, 255, 0.05) 26%, transparent 27%, transparent 74%, rgba(255, 255, 255, 0.05) 75%, rgba(255, 255, 255, 0.05) 76%, transparent 77%, transparent),
+    linear-gradient(90deg, transparent 24%, rgba(255, 255, 255, 0.05) 25%, rgba(255, 255, 255, 0.05) 26%, transparent 27%, transparent 74%, rgba(255, 255, 255, 0.05) 75%, rgba(255, 255, 255, 0.05) 76%, transparent 77%, transparent);
+  background-size: 100px 100px;
+  opacity: 0.4;
+  image-rendering: pixelated;
+  transform: translateZ(5px);
+  animation: panel-shift 30s linear infinite;
+}
+
+@keyframes panel-shift {
+  0% {
+    background-position: 0 0, 0 0;
+  }
+  100% {
+    background-position: 100px 100px, 100px 100px;
+  }
+}
+
+.horror-vignette {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: radial-gradient(
+    ellipse at center,
+    transparent 0%,
+    rgba(0, 0, 0, 0.6) 60%,
+    rgba(0, 0, 0, 0.95) 100%
+  );
+  animation: vignette-pulse 8s ease-in-out infinite;
+  transform: translateZ(20px);
+}
+
+@keyframes vignette-pulse {
+  0%, 100% {
+    opacity: 0.8;
+  }
+  50% {
+    opacity: 0.95;
+  }
+}
+
+/* Industrial panel overlay - top to bottom shadow with 3D depth */
+.blood-drip {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 35%;
+  background: linear-gradient(
+    to bottom,
+    rgba(20, 25, 20, 0.5) 0%,
+    rgba(15, 20, 15, 0.2) 60%,
+    transparent 100%
+  );
+  opacity: 0.7;
+  animation: panel-shadow 10s ease-in-out infinite;
+  transform: translateZ(15px);
+}
+
+@keyframes panel-shadow {
+  0%, 100% {
+    opacity: 0.6;
+  }
+  50% {
+    opacity: 0.8;
+  }
+}
+
+/* Logo/ASCII art with enhanced 3D depth */
+.loading-logo {
+  position: relative;
+  z-index: 1;
+  margin-bottom: 50px;
+  transform-style: preserve-3d;
+  transform: translateZ(50px);
+}
+
+.skull-art {
+  font-size: var(--responsive-large);
+  line-height: 1.2;
+  color: var(--loading-accent);
+  text-align: center;
+  text-shadow:
+    0 0 15px var(--loading-glow),
+    0 0 30px var(--loading-glow),
+    0 0 45px var(--loading-glow),
+    2px 2px 0 rgba(0, 0, 0, 0.5);
+  animation: skull-flicker 3s ease-in-out infinite;
+  image-rendering: pixelated;
+  image-rendering: crisp-edges;
+  margin: 0;
+  filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.6));
+  transform: translateZ(30px);
+}
+
+@keyframes skull-flicker {
+  0%, 100% {
+    opacity: 1;
+    text-shadow:
+      0 0 15px var(--loading-glow),
+      0 0 30px var(--loading-glow),
+      2px 2px 0 rgba(0, 0, 0, 0.5);
+  }
+  50% {
+    opacity: 0.9;
+    text-shadow:
+      0 0 20px var(--loading-glow),
+      0 0 40px var(--loading-glow),
+      2px 2px 0 rgba(0, 0, 0, 0.5);
+  }
+}
+
+/* Loading content with 3D layering */
+.loading-content {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  min-height: 250px;
+  transform-style: preserve-3d;
+  transform: translateZ(40px);
+}
+
+.loading-progress {
+  font-size: var(--responsive-large);
+  letter-spacing: 0.05em;
+  color: var(--loading-accent);
+  text-shadow:
+    0 0 8px var(--loading-glow),
+    2px 2px 0 rgba(0, 0, 0, 0.5);
+  transform: translateZ(20px);
+}
+
+.progress-bar {
+  display: inline-block;
+  font-family: monospace;
+  white-space: pre;
+  image-rendering: pixelated;
+}
+
+/* Current stage */
+.loading-stage {
+  font-size: var(--responsive-large);
+  color: var(--loading-text);
+  min-height: clamp(25px, calc(30px * var(--ui-scale)), 40px);
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-xs);
+  transform: translateZ(25px);
+  text-shadow: 2px 2px 0 rgba(0, 0, 0, 0.5);
+}
+
+.stage-text {
+  display: inline-block;
+}
+
+.cursor-blink {
+  animation: cursor-blink-anim 0.8s step-end infinite;
+  color: var(--loading-accent);
+  text-shadow:
+    0 0 10px var(--loading-glow),
+    2px 2px 0 rgba(0, 0, 0, 0.5);
+}
+
+@keyframes cursor-blink-anim {
+  0%, 50% {
+    opacity: 1;
+  }
+  51%, 100% {
+    opacity: 0;
+  }
+}
+
+.animate-typing {
+  animation: typing 0.3s steps(40) forwards;
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+@keyframes typing {
+  from {
+    width: 0;
+  }
+  to {
+    width: 100%;
+  }
+}
+
+/* Loading logs with depth */
+.loading-logs {
+  font-size: var(--responsive-base);
+  color: var(--loading-text);
+  opacity: 0.7;
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-xs);
+  max-height: clamp(120px, calc(150px * var(--ui-scale)), 200px);
+  overflow: hidden;
+  transform: translateZ(15px);
+}
+
+.log-entry {
+  opacity: 0;
+  animation: log-fade-in 0.3s ease-in forwards;
+  text-shadow: 1px 1px 0 rgba(0, 0, 0, 0.5);
+}
+
+@keyframes log-fade-in {
+  from {
+    opacity: 0;
+    transform: translateX(-15px) translateZ(0px);
+  }
+  to {
+    opacity: 0.7;
+    transform: translateX(0) translateZ(10px);
+  }
+}
+
+/* Footer with 3D positioning */
+.loading-footer {
+  position: absolute;
+  bottom: 50px;
+  left: 0;
+  right: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+  z-index: 1;
+  transform: translateZ(35px);
+}
+
+.copyright {
+  font-size: var(--responsive-base);
+  color: var(--loading-text);
+  opacity: 0.6;
+  letter-spacing: 0.1em;
+  text-align: center;
+  text-shadow: 1px 1px 0 rgba(0, 0, 0, 0.5);
+}
+
+.skip-hint {
+  font-size: var(--responsive-large);
+  color: var(--loading-accent);
+  text-shadow:
+    0 0 12px var(--loading-glow),
+    2px 2px 0 rgba(0, 0, 0, 0.5);
+  letter-spacing: 0.15em;
+}
+
+.animate-pulse {
+  animation: pulse-anim 2s ease-in-out infinite;
+}
+
+@keyframes pulse-anim {
+  0%, 100% {
+    opacity: 0.6;
+    transform: translateZ(35px) scale(1);
+  }
+  50% {
+    opacity: 1;
+    transform: translateZ(45px) scale(1.05);
+  }
+}
+
+/* Pixelated scanline effect */
+.loading-screen::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: repeating-linear-gradient(
+    0deg,
+    rgba(0, 0, 0, 0.15) 0px,
+    transparent 1px,
+    transparent 2px,
+    rgba(0, 0, 0, 0.15) 3px
+  );
+  pointer-events: none;
+  z-index: 999;
+  animation: scanline-move 8s linear infinite;
+  image-rendering: pixelated;
+}
+
+@keyframes scanline-move {
+  0% {
+    transform: translateY(0);
+  }
+  100% {
+    transform: translateY(4px);
+  }
+}

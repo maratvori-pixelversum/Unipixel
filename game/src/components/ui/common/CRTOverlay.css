@@ -1,0 +1,492 @@
+.crt-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 30;
+  overflow: hidden;
+}
+
+/* Scanlines - horizontal lines across screen */
+.crt-scanlines {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    to bottom,
+    rgba(255, 255, 255, 0) 50%,
+    rgba(0, 0, 0, 0.8) 50%
+  );
+  background-size: 100% 2px;
+  animation: scanlines 8s linear infinite;
+  pointer-events: none;
+}
+
+@keyframes scanlines {
+  0% {
+    transform: translateY(0);
+  }
+  100% {
+    transform: translateY(2px);
+  }
+}
+
+/* Phosphor glow - gives text that CRT glow */
+.crt-glow {
+  position: absolute;
+  top: -10%;
+  left: -10%;
+  width: 120%;
+  height: 120%;
+  background: radial-gradient(
+    ellipse at center,
+    rgba(139, 0, 0, 0.15) 0%,
+    rgba(0, 0, 0, 0) 70%
+  );
+  pointer-events: none;
+  animation: glow-pulse 3s ease-in-out infinite;
+}
+
+@keyframes glow-pulse {
+  0%, 100% {
+    opacity: 0.6;
+  }
+  50% {
+    opacity: 0.8;
+  }
+}
+
+/* Static/noise overlay */
+.crt-noise {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEAAAABACAYAAACqaXHeAAAABHNCSVQICAgIfAhkiAAAAAlwSFlzAAALEwAACxMBAJqcGAAAAeFJREFUeJzt2jFKA0EYhuFvJYKVjVjYWHkBL+ABPIWVd/AuXsHKC3gBK7GyESwsbCzU4jdYvIVQsNhM4u48T7Oz2WX2m/knk2QmRQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAPqtWl0gSVJVB0muN51zrXV/muD9DGf36sTvxTmVJL/nWG+Kh7p+e3mu7y+/8z/fdr96ft53zvl2gvePe+K/v0+SHPXEj5LcdsR/vN1N8HmzDv6t+/tnRwAAAAAAAAAAAAAAAAAAAAAAAAA');
+  animation: noise 0.2s steps(10) infinite;
+  pointer-events: none;
+}
+
+@keyframes noise {
+  0%, 100% {
+    background-position: 0 0;
+  }
+  10% {
+    background-position: -5% -10%;
+  }
+  20% {
+    background-position: -15% 5%;
+  }
+  30% {
+    background-position: 7% -25%;
+  }
+  40% {
+    background-position: 20% 25%;
+  }
+  50% {
+    background-position: -25% 10%;
+  }
+  60% {
+    background-position: 15% 5%;
+  }
+  70% {
+    background-position: 0 15%;
+  }
+  80% {
+    background-position: 25% 35%;
+  }
+  90% {
+    background-position: -10% 10%;
+  }
+}
+
+/* Flicker effect */
+.crt-flicker {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #000;
+  pointer-events: none;
+}
+
+/* Vignette - darkens edges for horror atmosphere */
+.crt-vignette {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: radial-gradient(
+    ellipse at center,
+    rgba(0, 0, 0, 0) 0%,
+    rgba(0, 0, 0, 0.3) 50%,
+    rgba(0, 0, 0, 0.8) 100%
+  );
+  pointer-events: none;
+}
+
+/* Screen curvature - subtle barrel distortion */
+.crt-curve {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+}
+
+/* Chromatic aberration - RGB separation on edges */
+.crt-chromatic {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  mix-blend-mode: screen;
+  animation: chromatic 0.5s ease-in-out infinite alternate;
+}
+
+@keyframes chromatic {
+  0% {
+    text-shadow:
+      -2px 0 0 rgba(255, 0, 0, 0.3),
+      2px 0 0 rgba(0, 255, 255, 0.3);
+  }
+  100% {
+    text-shadow:
+      -1px 0 0 rgba(255, 0, 0, 0.2),
+      1px 0 0 rgba(0, 255, 255, 0.2);
+  }
+}
+
+/* Mobile optimizations - reduce effects on smaller screens */
+@media (max-width: 600px) {
+  .crt-scanlines {
+    opacity: 0.1;
+  }
+
+  .crt-noise {
+    opacity: 0.05;
+  }
+
+  .crt-glow {
+    display: none;
+  }
+
+  .crt-chromatic {
+    display: none;
+  }
+
+  .crt-screen-distortion {
+    display: none;
+  }
+
+  .crt-phosphor-trails {
+    display: none;
+  }
+}
+
+/* === ENHANCED CRT EFFECTS === */
+
+/* Screen curvature distortion (barrel distortion) */
+.crt-screen-distortion {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  background: radial-gradient(
+    circle at center,
+    transparent 0%,
+    transparent 60%,
+    rgba(0, 0, 0, 0.02) 70%,
+    rgba(0, 0, 0, 0.05) 80%,
+    rgba(0, 0, 0, 0.1) 90%,
+    rgba(0, 0, 0, 0.2) 100%
+  );
+}
+
+/* Enhanced phosphor glow with color variation */
+.crt-phosphor-glow {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: radial-gradient(
+    ellipse at center,
+    rgba(0, 255, 100, 0.03) 0%,
+    rgba(0, 200, 150, 0.02) 30%,
+    transparent 70%
+  );
+  mix-blend-mode: screen;
+  animation: phosphor-pulse 4s ease-in-out infinite;
+  pointer-events: none;
+}
+
+@keyframes phosphor-pulse {
+  0%, 100% {
+    opacity: 0.5;
+  }
+  50% {
+    opacity: 0.8;
+  }
+}
+
+/* Phosphor persistence trails (afterglow) */
+.crt-phosphor-trails {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    180deg,
+    transparent 0%,
+    rgba(0, 255, 100, 0.01) 50%,
+    transparent 100%
+  );
+  animation: phosphor-trail 0.2s linear infinite;
+  pointer-events: none;
+  mix-blend-mode: screen;
+}
+
+@keyframes phosphor-trail {
+  0% {
+    opacity: 0.8;
+  }
+  100% {
+    opacity: 0.3;
+  }
+}
+
+/* Enhanced RGB separation with animation */
+.crt-rgb-split {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  mix-blend-mode: screen;
+  animation: rgb-shift 2s ease-in-out infinite;
+}
+
+@keyframes rgb-shift {
+  0%, 100% {
+    filter:
+      drop-shadow(-1px 0 0 rgba(255, 0, 0, 0.2))
+      drop-shadow(1px 0 0 rgba(0, 255, 255, 0.2));
+  }
+  25% {
+    filter:
+      drop-shadow(-2px 0 0 rgba(255, 0, 0, 0.3))
+      drop-shadow(2px 0 0 rgba(0, 255, 255, 0.3));
+  }
+  50% {
+    filter:
+      drop-shadow(-1px 0 0 rgba(255, 0, 0, 0.15))
+      drop-shadow(1px 0 0 rgba(0, 255, 255, 0.15));
+  }
+  75% {
+    filter:
+      drop-shadow(-2px 0 0 rgba(255, 0, 0, 0.25))
+      drop-shadow(2px 0 0 rgba(0, 255, 255, 0.25));
+  }
+}
+
+/* Screen reflection simulation */
+.crt-reflection {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    120deg,
+    rgba(255, 255, 255, 0.05) 0%,
+    transparent 20%,
+    transparent 40%,
+    rgba(255, 255, 255, 0.02) 50%,
+    transparent 60%,
+    transparent 80%,
+    rgba(255, 255, 255, 0.03) 100%
+  );
+  pointer-events: none;
+  animation: reflection-shift 10s linear infinite;
+}
+
+@keyframes reflection-shift {
+  0% {
+    transform: translateX(-10%);
+  }
+  100% {
+    transform: translateX(10%);
+  }
+}
+
+/* Interlaced scanlines (more authentic CRT) */
+.crt-interlace {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    to bottom,
+    rgba(0, 0, 0, 0) 0%,
+    rgba(0, 0, 0, 0) 48%,
+    rgba(0, 0, 0, 0.9) 48%,
+    rgba(0, 0, 0, 0.9) 52%,
+    rgba(0, 0, 0, 0) 52%,
+    rgba(0, 0, 0, 0) 100%
+  );
+  background-size: 100% 4px;
+  pointer-events: none;
+  opacity: 0.6;
+}
+
+/* Electron beam scan effect */
+.crt-beam-scan {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 3px;
+  background: linear-gradient(
+    to bottom,
+    transparent,
+    rgba(255, 255, 255, 0.3),
+    transparent
+  );
+  pointer-events: none;
+  animation: beam-scan 4s linear infinite;
+  mix-blend-mode: screen;
+}
+
+@keyframes beam-scan {
+  0% {
+    transform: translateY(0);
+    opacity: 0;
+  }
+  10% {
+    opacity: 0.5;
+  }
+  90% {
+    opacity: 0.5;
+  }
+  100% {
+    transform: translateY(100vh);
+    opacity: 0;
+  }
+}
+
+/* Moire pattern effect */
+.crt-moire {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image:
+    repeating-linear-gradient(0deg, transparent, transparent 1px, rgba(0, 0, 0, 0.05) 1px, rgba(0, 0, 0, 0.05) 2px),
+    repeating-linear-gradient(90deg, transparent, transparent 1px, rgba(0, 0, 0, 0.05) 1px, rgba(0, 0, 0, 0.05) 2px);
+  background-size: 2px 2px;
+  pointer-events: none;
+  opacity: 0.3;
+  mix-blend-mode: multiply;
+}
+
+/* Screen burn-in effect (subtle) */
+.crt-burn-in {
+  position: absolute;
+  top: 10%;
+  left: 10%;
+  width: 80%;
+  height: 80%;
+  background: radial-gradient(
+    ellipse at center,
+    rgba(0, 255, 100, 0.01) 0%,
+    transparent 50%
+  );
+  pointer-events: none;
+  mix-blend-mode: screen;
+}
+
+/* Pixel grid (shadow mask) */
+.crt-pixel-grid {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image:
+    repeating-linear-gradient(0deg, transparent 0px, transparent 1px, rgba(0, 0, 0, 0.2) 1px, rgba(0, 0, 0, 0.2) 2px),
+    repeating-linear-gradient(90deg, transparent 0px, transparent 1px, rgba(0, 0, 0, 0.2) 1px, rgba(0, 0, 0, 0.2) 2px);
+  background-size: 2px 2px;
+  pointer-events: none;
+  opacity: 0.15;
+  image-rendering: pixelated;
+  image-rendering: -moz-crisp-edges;
+  image-rendering: crisp-edges;
+}
+
+/* Random flicker simulation */
+.crt-flicker-random {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.1);
+  pointer-events: none;
+  animation: random-flicker 0.15s steps(1) infinite;
+}
+
+@keyframes random-flicker {
+  0% {
+    opacity: 0;
+  }
+  5% {
+    opacity: 0.1;
+  }
+  10% {
+    opacity: 0;
+  }
+  15% {
+    opacity: 0;
+  }
+  20% {
+    opacity: 0.05;
+  }
+  25% {
+    opacity: 0;
+  }
+  30% {
+    opacity: 0;
+  }
+  35% {
+    opacity: 0;
+  }
+  40% {
+    opacity: 0;
+  }
+  45% {
+    opacity: 0.08;
+  }
+  50% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 0;
+  }
+}

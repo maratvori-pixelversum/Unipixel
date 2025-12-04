@@ -1,0 +1,136 @@
+.terminal-input-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  font-family: 'DigitalDisco', 'Courier New', monospace;
+  margin: 10px 0;
+}
+
+.terminal-input-wrapper.disabled {
+  opacity: 0.5;
+  pointer-events: none;
+}
+
+.input-label {
+  font-size: 14px;
+  color: var(--input-text);
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  font-weight: bold;
+}
+
+.input-container {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  background: var(--input-bg);
+  padding: 8px 0;
+  transition: all 0.2s ease;
+  position: relative;
+}
+
+.input-container.focused {
+  background: rgba(51, 170, 51, 0.05);
+  box-shadow: 0 0 10px var(--input-glow);
+}
+
+.input-container.focused .input-bracket {
+  color: var(--input-accent);
+  text-shadow: 0 0 8px var(--input-glow);
+}
+
+.terminal-input-wrapper.error .input-container {
+  background: rgba(170, 85, 51, 0.1);
+}
+
+.terminal-input-wrapper.error .input-bracket {
+  color: var(--input-error);
+}
+
+.input-bracket {
+  font-size: 18px;
+  color: var(--input-border);
+  font-weight: bold;
+  user-select: none;
+  transition: all 0.2s ease;
+}
+
+.input-field {
+  flex-grow: 1;
+  background: transparent;
+  border: none;
+  outline: none;
+  color: var(--input-text);
+  font-family: 'DigitalDisco', 'Courier New', monospace;
+  font-size: 16px;
+  letter-spacing: 0.05em;
+  padding: 0 8px;
+  min-width: 0;
+}
+
+.input-field::placeholder {
+  color: var(--input-border);
+  opacity: 0.5;
+}
+
+.input-cursor {
+  color: var(--input-accent);
+  text-shadow: 0 0 8px var(--input-glow);
+  animation: cursor-pulse 1s ease-in-out infinite;
+  position: absolute;
+  right: 30px;
+  font-size: 18px;
+}
+
+@keyframes cursor-pulse {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.5;
+  }
+}
+
+.input-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 12px;
+  min-height: 16px;
+}
+
+.input-error-text {
+  color: var(--input-error);
+  text-shadow: 0 0 5px var(--input-error);
+}
+
+.input-counter {
+  color: var(--input-border);
+  opacity: 0.7;
+  text-align: right;
+  margin-left: auto;
+}
+
+/* Mobile adjustments */
+@media (max-width: 600px) {
+  .input-field {
+    font-size: 14px;
+    padding: 2px 6px;
+  }
+
+  .input-label {
+    font-size: 12px;
+  }
+
+  .input-bracket {
+    font-size: 16px;
+  }
+
+  .input-cursor {
+    font-size: 16px;
+  }
+
+  .input-footer {
+    font-size: 11px;
+  }
+}

@@ -1,0 +1,138 @@
+{
+  "type": "stars",
+  "sprites": {
+    "O": {
+      "file": "star_O.png",
+      "frameWidth": 1291,
+      "frameHeight": 1291,
+      "frameCount": 8,
+      "variants": 1
+    },
+    "B": {
+      "file": "star_B.png",
+      "frameWidth": 1186,
+      "frameHeight": 1186,
+      "frameCount": 8,
+      "variants": 1
+    },
+    "A": {
+      "file": "star_A.png",
+      "frameWidth": 1028,
+      "frameHeight": 1028,
+      "frameCount": 8,
+      "variants": 1
+    },
+    "F": {
+      "file": "star_F.png",
+      "frameWidth": 1076,
+      "frameHeight": 1076,
+      "frameCount": 8,
+      "variants": 1
+    },
+    "G": {
+      "file": "star_G.png",
+      "frameWidth": 1097,
+      "frameHeight": 1097,
+      "frameCount": 8,
+      "variants": 1
+    },
+    "K": {
+      "file": "star_K.png",
+      "frameWidth": 774,
+      "frameHeight": 774,
+      "frameCount": 8,
+      "variants": 1
+    },
+    "M": {
+      "file": "star_M.png",
+      "frameWidth": 512,
+      "frameHeight": 512,
+      "frameCount": 8,
+      "variants": 1
+    },
+    "BrownDwarf": {
+      "file": "star_BrownDwarf.png",
+      "frameWidth": 520,
+      "frameHeight": 520,
+      "frameCount": 8,
+      "variants": 1
+    },
+    "WhiteDwarf": {
+      "file": "star_WhiteDwarf.png",
+      "frameWidth": 500,
+      "frameHeight": 500,
+      "frameCount": 8,
+      "variants": 1
+    },
+    "NeutronStar": {
+      "file": "star_NeutronStar.png",
+      "frameWidth": 279,
+      "frameHeight": 279,
+      "frameCount": 8,
+      "variants": 1
+    },
+    "Pulsar": {
+      "file": "star_Pulsar.png",
+      "frameWidth": 360,
+      "frameHeight": 360,
+      "frameCount": 8,
+      "variants": 1
+    },
+    "RedGiant": {
+      "file": "star_RedGiant.png",
+      "frameWidth": 1370,
+      "frameHeight": 1370,
+      "frameCount": 8,
+      "variants": 1
+    },
+    "BlueGiant": {
+      "file": "star_BlueGiant.png",
+      "frameWidth": 1377,
+      "frameHeight": 1377,
+      "frameCount": 8,
+      "variants": 1
+    },
+    "RedSuperGiant": {
+      "file": "star_RedSuperGiant.png",
+      "frameWidth": 1446,
+      "frameHeight": 1446,
+      "frameCount": 8,
+      "variants": 1
+    },
+    "BlueSuperGiant": {
+      "file": "star_BlueSuperGiant.png",
+      "frameWidth": 1351,
+      "frameHeight": 1351,
+      "frameCount": 8,
+      "variants": 1
+    },
+    "WolfRayet": {
+      "file": "star_WolfRayet.png",
+      "frameWidth": 1086,
+      "frameHeight": 1086,
+      "frameCount": 8,
+      "variants": 1
+    },
+    "CarbonStar": {
+      "file": "star_CarbonStar.png",
+      "frameWidth": 1007,
+      "frameHeight": 1007,
+      "frameCount": 8,
+      "variants": 1
+    },
+    "SRed": {
+      "file": "star_SRed.png",
+      "frameWidth": 780,
+      "frameHeight": 780,
+      "frameCount": 8,
+      "variants": 1
+    },
+    "Protostar": {
+      "file": "star_Protostar.png",
+      "frameWidth": 823,
+      "frameHeight": 823,
+      "frameCount": 8,
+      "variants": 1
+    }
+  }
+}

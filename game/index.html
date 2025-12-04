@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>PixelVerse - Space Exploration Game</title>
+
+    <!-- Preload fonts to reduce loading warnings and improve performance -->
+    <link rel="preload" href="/concepts/fonts/DigitalDisco.ttf" as="font" type="font/ttf" crossorigin="anonymous" />
+    <link rel="preload" href="/concepts/fonts/DigitalDisco-Thin.ttf" as="font" type="font/ttf" crossorigin="anonymous" />
+
+    <style>
+      @font-face {
+        font-family: 'DigitalDisco';
+        src: url('/concepts/fonts/DigitalDisco.ttf') format('truetype');
+        font-weight: normal;
+        font-style: normal;
+        font-display: swap; /* Show fallback font immediately, swap when loaded */
+      }
+      @font-face {
+        font-family: 'DigitalDisco-Thin';
+        src: url('/concepts/fonts/DigitalDisco-Thin.ttf') format('truetype');
+        font-weight: normal;
+        font-style: normal;
+        font-display: swap; /* Show fallback font immediately, swap when loaded */
+      }
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      body {
+        margin: 0;
+        font-family: 'DigitalDisco', 'Courier New', monospace;
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+        overflow: hidden;
+        background-color: #000;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.js"></script>
+  </body>
+</html>

@@ -1,0 +1,655 @@
+{
+  "version": "4.0.0",
+  "generated": "2025-12-04T08:50:08.848Z",
+  "description": "Combined sprite manifest from all subdirectories",
+  "sprites": {
+    "stars": {
+      "O": {
+        "file": "stars/star_O.png",
+        "frames": 8,
+        "width": 10328,
+        "height": 1291
+      },
+      "B": {
+        "file": "stars/star_B.png",
+        "frames": 8,
+        "width": 9488,
+        "height": 1186
+      },
+      "A": {
+        "file": "stars/star_A.png",
+        "frames": 8,
+        "width": 8224,
+        "height": 1028
+      },
+      "F": {
+        "file": "stars/star_F.png",
+        "frames": 8,
+        "width": 8608,
+        "height": 1076
+      },
+      "G": {
+        "file": "stars/star_G.png",
+        "frames": 8,
+        "width": 8776,
+        "height": 1097
+      },
+      "K": {
+        "file": "stars/star_K.png",
+        "frames": 8,
+        "width": 6192,
+        "height": 774
+      },
+      "M": {
+        "file": "stars/star_M.png",
+        "frames": 8,
+        "width": 4096,
+        "height": 512
+      },
+      "BrownDwarf": {
+        "file": "stars/star_BrownDwarf.png",
+        "frames": 8,
+        "width": 4160,
+        "height": 520
+      },
+      "WhiteDwarf": {
+        "file": "stars/star_WhiteDwarf.png",
+        "frames": 8,
+        "width": 4000,
+        "height": 500
+      },
+      "NeutronStar": {
+        "file": "stars/star_NeutronStar.png",
+        "frames": 8,
+        "width": 2232,
+        "height": 279
+      },
+      "Pulsar": {
+        "file": "stars/star_Pulsar.png",
+        "frames": 8,
+        "width": 2880,
+        "height": 360
+      },
+      "RedGiant": {
+        "file": "stars/star_RedGiant.png",
+        "frames": 8,
+        "width": 10960,
+        "height": 1370
+      },
+      "BlueGiant": {
+        "file": "stars/star_BlueGiant.png",
+        "frames": 8,
+        "width": 11016,
+        "height": 1377
+      },
+      "RedSuperGiant": {
+        "file": "stars/star_RedSuperGiant.png",
+        "frames": 8,
+        "width": 11568,
+        "height": 1446
+      },
+      "BlueSuperGiant": {
+        "file": "stars/star_BlueSuperGiant.png",
+        "frames": 8,
+        "width": 10808,
+        "height": 1351
+      },
+      "WolfRayet": {
+        "file": "stars/star_WolfRayet.png",
+        "frames": 8,
+        "width": 8688,
+        "height": 1086
+      },
+      "CarbonStar": {
+        "file": "stars/star_CarbonStar.png",
+        "frames": 8,
+        "width": 8056,
+        "height": 1007
+      },
+      "SRed": {
+        "file": "stars/star_SRed.png",
+        "frames": 8,
+        "width": 6240,
+        "height": 780
+      },
+      "Protostar": {
+        "file": "stars/star_Protostar.png",
+        "frames": 8,
+        "width": 6584,
+        "height": 823
+      }
+    },
+    "planets": {
+      "alpine_000": {
+        "file": "planets/planet_alpine_000.png",
+        "frames": 3,
+        "width": 0,
+        "height": 0
+      },
+      "alpine_001": {
+        "file": "planets/planet_alpine_001.png",
+        "frames": 3,
+        "width": 0,
+        "height": 0
+      },
+      "alpine_002": {
+        "file": "planets/planet_alpine_002.png",
+        "frames": 3,
+        "width": 0,
+        "height": 0
+      },
+      "archipelago_000": {
+        "file": "planets/planet_archipelago_000.png",
+        "frames": 3,
+        "width": 0,
+        "height": 0
+      },
+      "archipelago_001": {
+        "file": "planets/planet_archipelago_001.png",
+        "frames": 3,
+        "width": 0,
+        "height": 0
+      },
+      "archipelago_002": {
+        "file": "planets/planet_archipelago_002.png",
+        "frames": 3,
+        "width": 0,
+        "height": 0
+      },
+      "carbon_000": {
+        "file": "planets/planet_carbon_000.png",
+        "frames": 3,
+        "width": 0,
+        "height": 0
+      },
+      "carbon_001": {
+        "file": "planets/planet_carbon_001.png",
+        "frames": 3,
+        "width": 0,
+        "height": 0
+      },
+      "carbon_002": {
+        "file": "planets/planet_carbon_002.png",
+        "frames": 3,
+        "width": 0,
+        "height": 0
+      },
+      "crystal_000": {
+        "file": "planets/planet_crystal_000.png",
+        "frames": 3,
+        "width": 0,
+        "height": 0
+      },
+      "crystal_001": {
+        "file": "planets/planet_crystal_001.png",
+        "frames": 3,
+        "width": 0,
+        "height": 0
+      },
+      "crystal_002": {
+        "file": "planets/planet_crystal_002.png",
+        "frames": 3,
+        "width": 0,
+        "height": 0
+      },
+      "desert_000": {
+        "file": "planets/planet_desert_000.png",
+        "frames": 3,
+        "width": 0,
+        "height": 0
+      },
+      "desert_001": {
+        "file": "planets/planet_desert_001.png",
+        "frames": 3,
+        "width": 0,
+        "height": 0
+      },
+      "desert_002": {
+        "file": "planets/planet_desert_002.png",
+        "frames": 3,
+        "width": 0,
+        "height": 0
+      },
+      "diamond_000": {
+        "file": "planets/planet_diamond_000.png",
+        "frames": 3,
+        "width": 0,
+        "height": 0
+      },
+      "diamond_001": {
+        "file": "planets/planet_diamond_001.png",
+        "frames": 3,
+        "width": 0,
+        "height": 0
+      },
+      "diamond_002": {
+        "file": "planets/planet_diamond_002.png",
+        "frames": 3,
+        "width": 0,
+        "height": 0
+      },
+      "eyeball_000": {
+        "file": "planets/planet_eyeball_000.png",
+        "frames": 3,
+        "width": 0,
+        "height": 0
+      },
+      "eyeball_001": {
+        "file": "planets/planet_eyeball_001.png",
+        "frames": 3,
+        "width": 0,
+        "height": 0
+      },
+      "eyeball_002": {
+        "file": "planets/planet_eyeball_002.png",
+        "frames": 3,
+        "width": 0,
+        "height": 0
+      },
+      "frozen_000": {
+        "file": "planets/planet_frozen_000.png",
+        "frames": 3,
+        "width": 0,
+        "height": 0
+      },
+      "frozen_001": {
+        "file": "planets/planet_frozen_001.png",
+        "frames": 3,
+        "width": 0,
+        "height": 0
+      },
+      "frozen_002": {
+        "file": "planets/planet_frozen_002.png",
+        "frames": 3,
+        "width": 0,
+        "height": 0
+      },
+      "gas_giant_000": {
+        "file": "planets/planet_gas_giant_000.png",
+        "frames": 3,
+        "width": 0,
+        "height": 0
+      },
+      "ice_000": {
+        "file": "planets/planet_ice_000.png",
+        "frames": 3,
+        "width": 0,
+        "height": 0
+      },
+      "ice_001": {
+        "file": "planets/planet_ice_001.png",
+        "frames": 3,
+        "width": 0,
+        "height": 0
+      },
+      "ice_002": {
+        "file": "planets/planet_ice_002.png",
+        "frames": 3,
+        "width": 0,
+        "height": 0
+      },
+      "iron_core_000": {
+        "file": "planets/planet_iron_core_000.png",
+        "frames": 3,
+        "width": 0,
+        "height": 0
+      },
+      "iron_core_001": {
+        "file": "planets/planet_iron_core_001.png",
+        "frames": 3,
+        "width": 0,
+        "height": 0
+      },
+      "iron_core_002": {
+        "file": "planets/planet_iron_core_002.png",
+        "frames": 3,
+        "width": 0,
+        "height": 0
+      },
+      "jungle_000": {
+        "file": "planets/planet_jungle_000.png",
+        "frames": 3,
+        "width": 0,
+        "height": 0
+      },
+      "jungle_001": {
+        "file": "planets/planet_jungle_001.png",
+        "frames": 3,
+        "width": 0,
+        "height": 0
+      },
+      "jungle_002": {
+        "file": "planets/planet_jungle_002.png",
+        "frames": 3,
+        "width": 0,
+        "height": 0
+      },
+      "lava_000": {
+        "file": "planets/planet_lava_000.png",
+        "frames": 3,
+        "width": 0,
+        "height": 0
+      },
+      "lava_001": {
+        "file": "planets/planet_lava_001.png",
+        "frames": 3,
+        "width": 0,
+        "height": 0
+      },
+      "lava_002": {
+        "file": "planets/planet_lava_002.png",
+        "frames": 3,
+        "width": 0,
+        "height": 0
+      },
+      "magma_ocean_000": {
+        "file": "planets/planet_magma_ocean_000.png",
+        "frames": 3,
+        "width": 0,
+        "height": 0
+      },
+      "magma_ocean_001": {
+        "file": "planets/planet_magma_ocean_001.png",
+        "frames": 3,
+        "width": 0,
+        "height": 0
+      },
+      "magma_ocean_002": {
+        "file": "planets/planet_magma_ocean_002.png",
+        "frames": 3,
+        "width": 0,
+        "height": 0
+      },
+      "mega_earth_000": {
+        "file": "planets/planet_mega_earth_000.png",
+        "frames": 3,
+        "width": 0,
+        "height": 0
+      },
+      "mega_earth_001": {
+        "file": "planets/planet_mega_earth_001.png",
+        "frames": 3,
+        "width": 0,
+        "height": 0
+      },
+      "mega_earth_002": {
+        "file": "planets/planet_mega_earth_002.png",
+        "frames": 3,
+        "width": 0,
+        "height": 0
+      },
+      "metal_000": {
+        "file": "planets/planet_metal_000.png",
+        "frames": 3,
+        "width": 0,
+        "height": 0
+      },
+      "metal_001": {
+        "file": "planets/planet_metal_001.png",
+        "frames": 3,
+        "width": 0,
+        "height": 0
+      },
+      "metal_002": {
+        "file": "planets/planet_metal_002.png",
+        "frames": 3,
+        "width": 0,
+        "height": 0
+      },
+      "ocean_000": {
+        "file": "planets/planet_ocean_000.png",
+        "frames": 3,
+        "width": 0,
+        "height": 0
+      },
+      "ocean_001": {
+        "file": "planets/planet_ocean_001.png",
+        "frames": 3,
+        "width": 0,
+        "height": 0
+      },
+      "ocean_002": {
+        "file": "planets/planet_ocean_002.png",
+        "frames": 3,
+        "width": 0,
+        "height": 0
+      },
+      "pangea_000": {
+        "file": "planets/planet_pangea_000.png",
+        "frames": 3,
+        "width": 0,
+        "height": 0
+      },
+      "pangea_001": {
+        "file": "planets/planet_pangea_001.png",
+        "frames": 3,
+        "width": 0,
+        "height": 0
+      },
+      "pangea_002": {
+        "file": "planets/planet_pangea_002.png",
+        "frames": 3,
+        "width": 0,
+        "height": 0
+      },
+      "radioactive_000": {
+        "file": "planets/planet_radioactive_000.png",
+        "frames": 3,
+        "width": 0,
+        "height": 0
+      },
+      "radioactive_001": {
+        "file": "planets/planet_radioactive_001.png",
+        "frames": 3,
+        "width": 0,
+        "height": 0
+      },
+      "radioactive_002": {
+        "file": "planets/planet_radioactive_002.png",
+        "frames": 3,
+        "width": 0,
+        "height": 0
+      },
+      "rocky_000": {
+        "file": "planets/planet_rocky_000.png",
+        "frames": 3,
+        "width": 0,
+        "height": 0
+      },
+      "rocky_001": {
+        "file": "planets/planet_rocky_001.png",
+        "frames": 3,
+        "width": 0,
+        "height": 0
+      },
+      "rocky_002": {
+        "file": "planets/planet_rocky_002.png",
+        "frames": 3,
+        "width": 0,
+        "height": 0
+      },
+      "savanna_000": {
+        "file": "planets/planet_savanna_000.png",
+        "frames": 3,
+        "width": 0,
+        "height": 0
+      },
+      "savanna_001": {
+        "file": "planets/planet_savanna_001.png",
+        "frames": 3,
+        "width": 0,
+        "height": 0
+      },
+      "savanna_002": {
+        "file": "planets/planet_savanna_002.png",
+        "frames": 3,
+        "width": 0,
+        "height": 0
+      },
+      "sulfur_000": {
+        "file": "planets/planet_sulfur_000.png",
+        "frames": 3,
+        "width": 0,
+        "height": 0
+      },
+      "sulfur_001": {
+        "file": "planets/planet_sulfur_001.png",
+        "frames": 3,
+        "width": 0,
+        "height": 0
+      },
+      "sulfur_002": {
+        "file": "planets/planet_sulfur_002.png",
+        "frames": 3,
+        "width": 0,
+        "height": 0
+      },
+      "super_earth_000": {
+        "file": "planets/planet_super_earth_000.png",
+        "frames": 3,
+        "width": 0,
+        "height": 0
+      },
+      "super_earth_001": {
+        "file": "planets/planet_super_earth_001.png",
+        "frames": 3,
+        "width": 0,
+        "height": 0
+      },
+      "super_earth_002": {
+        "file": "planets/planet_super_earth_002.png",
+        "frames": 3,
+        "width": 0,
+        "height": 0
+      },
+      "swamp_000": {
+        "file": "planets/planet_swamp_000.png",
+        "frames": 3,
+        "width": 0,
+        "height": 0
+      },
+      "swamp_001": {
+        "file": "planets/planet_swamp_001.png",
+        "frames": 3,
+        "width": 0,
+        "height": 0
+      },
+      "swamp_002": {
+        "file": "planets/planet_swamp_002.png",
+        "frames": 3,
+        "width": 0,
+        "height": 0
+      },
+      "terran_000": {
+        "file": "planets/planet_terran_000.png",
+        "frames": 3,
+        "width": 0,
+        "height": 0
+      },
+      "terran_001": {
+        "file": "planets/planet_terran_001.png",
+        "frames": 3,
+        "width": 0,
+        "height": 0
+      },
+      "terran_002": {
+        "file": "planets/planet_terran_002.png",
+        "frames": 3,
+        "width": 0,
+        "height": 0
+      },
+      "tidally_locked_000": {
+        "file": "planets/planet_tidally_locked_000.png",
+        "frames": 3,
+        "width": 0,
+        "height": 0
+      },
+      "tidally_locked_001": {
+        "file": "planets/planet_tidally_locked_001.png",
+        "frames": 3,
+        "width": 0,
+        "height": 0
+      },
+      "tidally_locked_002": {
+        "file": "planets/planet_tidally_locked_002.png",
+        "frames": 3,
+        "width": 0,
+        "height": 0
+      },
+      "toxic_000": {
+        "file": "planets/planet_toxic_000.png",
+        "frames": 3,
+        "width": 0,
+        "height": 0
+      },
+      "toxic_001": {
+        "file": "planets/planet_toxic_001.png",
+        "frames": 3,
+        "width": 0,
+        "height": 0
+      },
+      "toxic_002": {
+        "file": "planets/planet_toxic_002.png",
+        "frames": 3,
+        "width": 0,
+        "height": 0
+      },
+      "tropical_000": {
+        "file": "planets/planet_tropical_000.png",
+        "frames": 3,
+        "width": 0,
+        "height": 0
+      },
+      "tropical_001": {
+        "file": "planets/planet_tropical_001.png",
+        "frames": 3,
+        "width": 0,
+        "height": 0
+      },
+      "tropical_002": {
+        "file": "planets/planet_tropical_002.png",
+        "frames": 3,
+        "width": 0,
+        "height": 0
+      },
+      "tundra_000": {
+        "file": "planets/planet_tundra_000.png",
+        "frames": 3,
+        "width": 0,
+        "height": 0
+      },
+      "tundra_001": {
+        "file": "planets/planet_tundra_001.png",
+        "frames": 3,
+        "width": 0,
+        "height": 0
+      },
+      "tundra_002": {
+        "file": "planets/planet_tundra_002.png",
+        "frames": 3,
+        "width": 0,
+        "height": 0
+      },
+      "volcanic_000": {
+        "file": "planets/planet_volcanic_000.png",
+        "frames": 3,
+        "width": 0,
+        "height": 0
+      },
+      "volcanic_001": {
+        "file": "planets/planet_volcanic_001.png",
+        "frames": 3,
+        "width": 0,
+        "height": 0
+      },
+      "volcanic_002": {
+        "file": "planets/planet_volcanic_002.png",
+        "frames": 3,
+        "width": 0,
+        "height": 0
+      }
+    },
+    "moons": {},
+    "asteroids": {}
+  }
+}

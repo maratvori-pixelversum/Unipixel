@@ -1,0 +1,393 @@
+/* Responsive design - works on all screen sizes */
+.statistics-screen {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  background: var(--stats-bg);
+  color: var(--stats-text);
+  font-family: 'DigitalDisco', 'Courier New', monospace;
+  overflow-y: auto;
+  overflow-x: hidden;
+  z-index: 1000;
+  padding: 30px;
+  image-rendering: pixelated;
+  image-rendering: crisp-edges;
+  perspective: 2000px;
+  transform-style: preserve-3d;
+}
+
+/* Background effects with 3D depth */
+.stats-bg-effects {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 0;
+  transform-style: preserve-3d;
+}
+
+/* Pixelated metal texture */
+.stats-bg-effects::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image:
+    repeating-linear-gradient(0deg, transparent, transparent 3px, rgba(0, 0, 0, 0.1) 3px, rgba(0, 0, 0, 0.1) 6px),
+    repeating-linear-gradient(90deg, transparent, transparent 3px, rgba(0, 0, 0, 0.1) 3px, rgba(0, 0, 0, 0.1) 6px);
+  opacity: 0.3;
+  image-rendering: pixelated;
+  transform: translateZ(5px);
+}
+
+/* Container with depth */
+.stats-container {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 35px;
+  width: 100%;
+  max-width: 1600px;
+  margin: 0 auto;
+  padding-bottom: 60px;
+  transform-style: preserve-3d;
+}
+
+/* Title section with 3D depth */
+.stats-title {
+  text-align: center;
+  margin-bottom: 15px;
+  padding-top: 30px;
+  transform: translateZ(45px);
+}
+
+.stats-title h1 {
+  font-size: 48px;
+  color: var(--stats-accent);
+  text-shadow:
+    0 0 15px var(--stats-glow),
+    0 0 30px var(--stats-glow),
+    2px 2px 0 rgba(0, 0, 0, 0.6);
+  margin: 0 0 15px 0;
+  letter-spacing: 0.15em;
+  font-weight: normal;
+  animation: title-flicker 4s ease-in-out infinite;
+  filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.7));
+}
+
+@keyframes title-flicker {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.95;
+  }
+}
+
+.stats-title p {
+  font-size: 20px;
+  color: var(--stats-text);
+  opacity: 0.7;
+  margin: 0;
+  letter-spacing: 0.2em;
+  text-shadow: 1px 1px 0 rgba(0, 0, 0, 0.5);
+}
+
+/* Stats grid with 3D layering */
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 30px;
+  width: 100%;
+  max-width: 1400px;
+  transform: translateZ(35px);
+}
+
+.stats-panel {
+  width: 100%;
+  transform-style: preserve-3d;
+  filter: drop-shadow(0 8px 16px rgba(0, 0, 0, 0.8));
+}
+
+.stats-section {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  padding: 15px;
+  position: relative;
+}
+
+.stat-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px 15px;
+  background: rgba(0, 0, 0, 0.3);
+  border-left: 3px solid var(--stats-border);
+  transition: all 0.2s ease;
+  position: relative;
+  text-shadow: 1px 1px 0 rgba(0, 0, 0, 0.5);
+}
+
+.stat-row::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background: repeating-linear-gradient(
+    90deg,
+    transparent,
+    transparent 4px,
+    rgba(255, 255, 255, 0.02) 4px,
+    rgba(255, 255, 255, 0.02) 8px
+  );
+  pointer-events: none;
+  image-rendering: pixelated;
+}
+
+.stat-row:hover {
+  background: rgba(0, 0, 0, 0.5);
+  border-left-color: var(--stats-accent);
+  transform: translateX(3px) translateZ(3px);
+}
+
+.stat-row.highlight {
+  border-left: 4px solid var(--stats-accent);
+  background: rgba(255, 140, 0, 0.15);
+}
+
+.stat-row.highlight .stat-value {
+  color: var(--stats-accent);
+  text-shadow:
+    0 0 10px var(--stats-glow),
+    2px 2px 0 rgba(0, 0, 0, 0.6);
+  font-size: 22px;
+}
+
+.stat-label {
+  font-size: 16px;
+  color: var(--stats-text);
+  opacity: 0.8;
+  letter-spacing: 0.05em;
+}
+
+.stat-value {
+  font-size: 20px;
+  color: var(--stats-text);
+  letter-spacing: 0.05em;
+  font-weight: bold;
+}
+
+/* Achievements panel with depth */
+.achievements-panel {
+  width: 100%;
+  max-width: 1400px;
+  transform: translateZ(40px);
+  filter: drop-shadow(0 8px 16px rgba(0, 0, 0, 0.8));
+}
+
+.achievements-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+  padding: 20px;
+}
+
+.achievement-card {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  padding: 18px;
+  background: rgba(0, 0, 0, 0.4);
+  border: 3px solid var(--stats-border);
+  transition: all 0.2s ease;
+  position: relative;
+  transform-style: preserve-3d;
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.05);
+}
+
+.achievement-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: repeating-linear-gradient(
+    45deg,
+    transparent,
+    transparent 8px,
+    rgba(255, 255, 255, 0.01) 8px,
+    rgba(255, 255, 255, 0.01) 16px
+  );
+  pointer-events: none;
+  image-rendering: pixelated;
+}
+
+.achievement-card.unlocked {
+  border-color: var(--stats-success);
+  background: rgba(0, 100, 0, 0.15);
+  box-shadow:
+    inset 0 0 15px rgba(0, 200, 0, 0.15),
+    0 0 10px rgba(0, 200, 0, 0.2);
+}
+
+.achievement-card.locked {
+  opacity: 0.5;
+}
+
+.achievement-card:hover {
+  transform: translateY(-3px) translateZ(5px);
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.05),
+    0 6px 12px rgba(0, 0, 0, 0.6);
+}
+
+.achievement-icon {
+  font-size: 42px;
+  color: var(--stats-accent);
+  text-shadow:
+    0 0 12px var(--stats-glow),
+    2px 2px 0 rgba(0, 0, 0, 0.6);
+  min-width: 50px;
+  text-align: center;
+}
+
+.achievement-card.unlocked .achievement-icon {
+  color: var(--stats-success);
+  text-shadow:
+    0 0 15px var(--stats-success),
+    2px 2px 0 rgba(0, 0, 0, 0.6);
+  animation: icon-glow 2s ease-in-out infinite;
+}
+
+@keyframes icon-glow {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.7;
+  }
+}
+
+.achievement-info {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.achievement-name {
+  font-size: 18px;
+  color: var(--stats-accent);
+  text-shadow:
+    0 0 8px var(--stats-glow),
+    1px 1px 0 rgba(0, 0, 0, 0.6);
+  letter-spacing: 0.05em;
+  font-weight: bold;
+}
+
+.achievement-card.unlocked .achievement-name {
+  color: var(--stats-success);
+  text-shadow:
+    0 0 8px var(--stats-success),
+    1px 1px 0 rgba(0, 0, 0, 0.6);
+}
+
+.achievement-desc {
+  font-size: 14px;
+  color: var(--stats-text);
+  opacity: 0.7;
+  letter-spacing: 0.03em;
+  text-shadow: 1px 1px 0 rgba(0, 0, 0, 0.5);
+}
+
+.achievement-status {
+  font-size: 13px;
+  color: var(--stats-success);
+  text-shadow:
+    0 0 8px var(--stats-success),
+    1px 1px 0 rgba(0, 0, 0, 0.6);
+  letter-spacing: 0.05em;
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  padding: 6px 12px;
+  background: rgba(0, 0, 0, 0.7);
+  border: 2px solid var(--stats-success);
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.1),
+    0 0 10px var(--stats-success);
+}
+
+/* Action buttons with depth */
+.stats-actions {
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  margin-top: 15px;
+  transform: translateZ(45px);
+}
+
+/* Animation for panel entrance */
+.stats-panel,
+.achievements-panel {
+  animation: panel-fade-in 0.5s ease-out;
+}
+
+@keyframes panel-fade-in {
+  from {
+    opacity: 0;
+    transform: translateY(30px) translateZ(0px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) translateZ(35px);
+  }
+}
+
+/* Scanline effect */
+.statistics-screen::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: repeating-linear-gradient(
+    0deg,
+    rgba(0, 0, 0, 0.15) 0px,
+    transparent 1px,
+    transparent 2px,
+    rgba(0, 0, 0, 0.15) 3px
+  );
+  pointer-events: none;
+  z-index: 999;
+  animation: scanline-move 8s linear infinite;
+  image-rendering: pixelated;
+}
+
+@keyframes scanline-move {
+  0% {
+    transform: translateY(0);
+  }
+  100% {
+    transform: translateY(4px);
+  }
+}

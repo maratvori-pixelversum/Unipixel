@@ -1,0 +1,123 @@
+/*
+ * Automatic Resolution Adjustment System
+ * Maintains 16:9 aspect ratio and scales UI intelligently
+ * Base design: 1920x1080
+ */
+
+:root {
+  /* Base resolution */
+  --base-width: 1920;
+  --base-height: 1080;
+
+  /* Calculate scale factors based on viewport */
+  --vw-scale: calc(100vw / var(--base-width));
+  --vh-scale: calc(100vh / var(--base-height));
+
+  /* Use the smaller scale to fit within viewport while maintaining aspect ratio */
+  --ui-scale: min(var(--vw-scale), var(--vh-scale));
+
+  /* Responsive font sizing with clamp for safety */
+  --responsive-base: clamp(10px, calc(16px * var(--ui-scale)), 24px);
+  --responsive-small: clamp(8px, calc(12px * var(--ui-scale)), 18px);
+  --responsive-large: clamp(16px, calc(32px * var(--ui-scale)), 48px);
+  --responsive-xlarge: clamp(24px, calc(48px * var(--ui-scale)), 72px);
+
+  /* Spacing scale */
+  --spacing-xs: clamp(4px, calc(8px * var(--ui-scale)), 12px);
+  --spacing-sm: clamp(8px, calc(12px * var(--ui-scale)), 18px);
+  --spacing-md: clamp(12px, calc(20px * var(--ui-scale)), 30px);
+  --spacing-lg: clamp(16px, calc(30px * var(--ui-scale)), 45px);
+  --spacing-xl: clamp(24px, calc(40px * var(--ui-scale)), 60px);
+}
+
+/* Responsive container that maintains aspect ratio */
+.responsive-ui-container {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+
+  /* Maintain 16:9 aspect ratio while fitting viewport */
+  width: min(100vw, calc(100vh * 16 / 9));
+  height: min(100vh, calc(100vw * 9 / 16));
+
+  /* Ensure content scales properly */
+  font-size: var(--responsive-base);
+}
+
+/* Fluid typography classes */
+.text-small {
+  font-size: var(--responsive-small);
+}
+
+.text-base {
+  font-size: var(--responsive-base);
+}
+
+.text-large {
+  font-size: var(--responsive-large);
+}
+
+.text-xlarge {
+  font-size: var(--responsive-xlarge);
+}
+
+/* Responsive spacing utilities */
+.spacing-xs {
+  padding: var(--spacing-xs);
+}
+
+.spacing-sm {
+  padding: var(--spacing-sm);
+}
+
+.spacing-md {
+  padding: var(--spacing-md);
+}
+
+.spacing-lg {
+  padding: var(--spacing-lg);
+}
+
+.spacing-xl {
+  padding: var(--spacing-xl);
+}
+
+/* Handle extreme aspect ratios */
+@media (max-aspect-ratio: 1/1) {
+  /* Portrait orientation - scale based on width */
+  :root {
+    --ui-scale: var(--vw-scale);
+  }
+}
+
+@media (min-aspect-ratio: 21/9) {
+  /* Ultra-wide screens - scale based on height */
+  :root {
+    --ui-scale: var(--vh-scale);
+  }
+}
+
+/* Mobile optimization */
+@media (max-width: 768px) {
+  :root {
+    /* Slightly larger minimum sizes for mobile readability */
+    --responsive-base: clamp(12px, calc(16px * var(--ui-scale)), 24px);
+    --responsive-small: clamp(10px, calc(12px * var(--ui-scale)), 18px);
+  }
+}
+
+/* Tablet optimization */
+@media (min-width: 769px) and (max-width: 1024px) {
+  :root {
+    --responsive-base: clamp(11px, calc(16px * var(--ui-scale)), 24px);
+  }
+}
+
+/* Large desktop optimization */
+@media (min-width: 2560px) {
+  :root {
+    /* Cap maximum sizes on very large screens */
+    --responsive-xlarge: clamp(24px, calc(48px * var(--ui-scale)), 64px);
+  }
+}

@@ -1,0 +1,14 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(dir \"C:\\Users\\antik\\Desktop\\Interstellar\")",
+      "Bash(dir \"C:\\Users\\antik\\Desktop\\Interstellar\" /b)",
+      "Bash(awk '{print \"\"\"\"Game.js size:\"\"\"\", $5}')",
+      "Bash(npm install)",
+      "Bash(npm run dev)",
+      "Bash(node -c \"C:\\Users\\antik\\Desktop\\Interstellar\\src\\engine\\Game.js\")"
+    ],
+    "deny": [],
+    "ask": []
+  }
+}
