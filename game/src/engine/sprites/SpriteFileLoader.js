@@ -130,10 +130,14 @@ export class SpriteFileLoader {
     try {
       const image = await this.loadSpriteImage(spriteInfo.file);
 
+      // Calculate frame dimensions from sprite sheet
+      const frameWidth = spriteInfo.width / spriteInfo.frames;
+      const frameHeight = spriteInfo.height;
+
       return {
         image,
-        frameWidth: spriteInfo.width / spriteInfo.frames,
-        frameHeight: spriteInfo.height,
+        frameWidth: frameWidth,
+        frameHeight: frameHeight,
         frameCount: spriteInfo.frames,
         cols: spriteInfo.frames,
         rows: 1
@@ -164,10 +168,14 @@ export class SpriteFileLoader {
     try {
       const image = await this.loadSpriteImage(spriteInfo.file);
 
+      // Calculate frame dimensions from sprite sheet
+      const frameWidth = spriteInfo.width / spriteInfo.frames;
+      const frameHeight = spriteInfo.height;
+
       return {
         image,
-        frameWidth: spriteInfo.width / spriteInfo.frames,
-        frameHeight: spriteInfo.height,
+        frameWidth: frameWidth,
+        frameHeight: frameHeight,
         frameCount: spriteInfo.frames,
         cols: spriteInfo.frames,
         rows: 1

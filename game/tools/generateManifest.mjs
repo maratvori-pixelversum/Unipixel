@@ -7,7 +7,7 @@
 import fs from 'fs';
 import path from 'path';
 import { fileURLToPath } from 'url';
-import { createCanvas, loadImage } from 'canvas';
+import { createCanvas, loadImage } from '@napi-rs/canvas';
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
@@ -27,11 +27,11 @@ async function getPNGDimensions(filePath) {
 }
 
 const CONFIG = {
-  spritesPerPlanetType: 80,
+  spritesPerPlanetType: 3,
   spritesPerMoon: 80,
   spritesPerAsteroid: 80,
   stellarClasses: ['O', 'B', 'A', 'F', 'G', 'K', 'M', 'BrownDwarf', 'WhiteDwarf', 'NeutronStar', 'Pulsar', 'RedGiant', 'BlueGiant', 'RedSuperGiant', 'BlueSuperGiant'],
-  planetTypes: ['terran', 'rocky', 'desert', 'ice', 'frozen', 'lava', 'volcanic', 'ocean', 'carbon', 'crystal', 'metal', 'eyeball', 'tidally_locked', 'radioactive', 'super_earth', 'jungle', 'chthonian', 'iron_core', 'hycean', 'coreless']
+  planetTypes: ['terran', 'rocky', 'desert', 'ice', 'frozen', 'tundra', 'lava', 'volcanic', 'ocean', 'carbon', 'crystal', 'metal', 'eyeball', 'tidally_locked', 'radioactive', 'super_earth', 'jungle', 'gas_giant', 'ice_giant']
 };
 
 async function generateManifest() {
@@ -49,7 +49,7 @@ async function generateManifest() {
     }
   };
 
-  // STARS: Read actual dimensions (variable sizes, 24 frames)
+  // STARS: Read actual dimensions (8 frames for slower rotation)
   console.log('Reading star sprite dimensions...');
   for (const stellarClass of CONFIG.stellarClasses) {
     const filePath = path.join(OUTPUT_DIR, 'stars', `star_${stellarClass}.png`);
@@ -58,7 +58,7 @@ async function generateManifest() {
       if (dims) {
         manifest.sprites.stars[stellarClass] = {
           file: `stars/star_${stellarClass}.png`,
-          frames: 24,
+          frames: 8,
           width: dims.width,
           height: dims.height
         };
@@ -66,7 +66,7 @@ async function generateManifest() {
     }
   }
 
-  // PLANETS: Read actual dimensions (variable sizes, 24 frames)
+  // PLANETS: Read actual dimensions (24 frames for full rotation)
   console.log('Reading planet sprite dimensions...');
   for (const planetType of CONFIG.planetTypes) {
     for (let i = 0; i < CONFIG.spritesPerPlanetType; i++) {

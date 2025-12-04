@@ -156,13 +156,13 @@ export class SpriteManager {
         const rawStellarClass = systemData.star.stellarClass || systemData.star.type || 'G';
         const normalizedStellarClass = this.normalizeStellarClass(rawStellarClass);
 
-        // PERFORMANCE FIX: Reduce animation frames from 24 to 4 for 6x speedup
+        // Star sprites have 8 frames for smooth but slow animation
         const starSprite = await this.celestialGen.generateStarSprite({
           stellarClass: normalizedStellarClass,
           radius: spriteRadius,  // Use capped sprite radius
           pixelSize: adjustedPixelSize,  // Adjust pixelation based on scale
           seed: systemData.seed,
-          animationFrames: 2  // ULTRA-OPTIMIZED: 50% faster than 4 frames, still animated
+          animationFrames: 8  // Matches generated sprite frame count
         });
 
         // Validate sprite was generated
@@ -213,14 +213,14 @@ export class SpriteManager {
           console.log(`[SpriteManager] Generating planet ${i + 1}/${systemData.planets.length} (${planet.type})...`);
 
           try {
-            // ENHANCED: Larger sprites with smaller pixels for detail
+            // Planet sprites have 24 frames for full rotation cycle
             const maxPlanetRadius = 60;  // ENHANCED: Bigger for more detail
             const planetSprite = await this.celestialGen.generatePlanetSprite({
               type: planet.type || 'terran',
               radius: Math.min(planet.radius || 50, maxPlanetRadius),
               pixelSize: 2,  // ENHANCED: Tiny pixels for detailed surfaces
               seed: systemData.seed + i * 1000,
-              animationFrames: 3  // ENHANCED: Smooth rotation animation
+              animationFrames: 24  // Matches generated sprite frame count
             });
 
             // Validate sprite was generated
