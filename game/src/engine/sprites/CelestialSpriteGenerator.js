@@ -151,14 +151,15 @@ export class CelestialSpriteGenerator {
 
     // Gas giants need special handling - redirect to gas giant sprite generator
     const gasGiantTypes = ['gas_giant', 'ice_giant', 'hot_jupiter', 'jovian', 'jovian_orange', 'jovian_tan',
-                           'ice_giant_blue', 'ice_giant_teal', 'green_giant', 'purple_giant', 'storm_giant', 'ringed_giant'];
+                           'ice_giant_blue', 'ice_giant_teal', 'green_giant', 'purple_giant', 'storm_giant', 'ringed_giant', 'super_jupiter'];
     if (gasGiantTypes.includes(type)) {
       // Map generic types to specific gas giant types
       const gasGiantMapping = {
         'gas_giant': 'jovian_orange',
         'ice_giant': 'ice_giant_blue',
         'hot_jupiter': 'hot_jupiter',
-        'jovian': 'jovian_orange'
+        'jovian': 'jovian_orange',
+        'super_jupiter': 'jovian_orange'
       };
       const gasGiantType = gasGiantMapping[type] || type;
       return this.generateGasGiantSprite({ type: gasGiantType, radius, seed });
@@ -180,7 +181,8 @@ export class CelestialSpriteGenerator {
       'metal_planet': 'metal',
       'eyeball_planet': 'eyeball',
       'tidally_locked_planet': 'tidally_locked',
-      'super_earth': 'terran'
+      'super_earth': 'terran',
+      'dwarf_planet': 'rocky'
     };
 
     const normalizedType = typeMapping[type] || type;

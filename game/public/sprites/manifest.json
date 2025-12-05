@@ -96,30 +96,18 @@
       }
     },
     "planets": {
-      "terran_000": {
-        "file": "planets/planet_terran_000.png",
-        "frames": 32,
-        "width": 25600,
-        "height": 800
-      },
-      "terran_001": {
-        "file": "planets/planet_terran_001.png",
-        "frames": 24,
-        "width": 19200,
-        "height": 800
-      },
-      "rocky_000": {
-        "file": "planets/planet_rocky_000.png",
-        "frames": 32,
-        "width": 25600,
-        "height": 800
-      },
-      "rocky_001": {
-        "file": "planets/planet_rocky_001.png",
-        "frames": 24,
-        "width": 19200,
-        "height": 800
-      },
+       "terran_000": {
+         "file": "planets/planet_terran_000.png",
+         "frames": 32,
+         "width": 25600,
+         "height": 800
+       },
+       "rocky_000": {
+         "file": "planets/planet_rocky_000.png",
+         "frames": 32,
+         "width": 25600,
+         "height": 800
+       },
       "desert_000": {
         "file": "planets/planet_desert_000.png",
         "frames": 32,
