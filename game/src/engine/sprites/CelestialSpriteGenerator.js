@@ -149,24 +149,59 @@ export class CelestialSpriteGenerator {
       seed = Math.random() * 10000
     } = config;
 
-    const cacheKey = `planet_${type}_${Math.floor(seed)}`;
+    // Gas giants need special handling - redirect to gas giant sprite generator
+    const gasGiantTypes = ['gas_giant', 'ice_giant', 'hot_jupiter', 'jovian', 'jovian_orange', 'jovian_tan',
+                           'ice_giant_blue', 'ice_giant_teal', 'green_giant', 'purple_giant', 'storm_giant', 'ringed_giant'];
+    if (gasGiantTypes.includes(type)) {
+      // Map generic types to specific gas giant types
+      const gasGiantMapping = {
+        'gas_giant': 'jovian_orange',
+        'ice_giant': 'ice_giant_blue',
+        'hot_jupiter': 'hot_jupiter',
+        'jovian': 'jovian_orange'
+      };
+      const gasGiantType = gasGiantMapping[type] || type;
+      return this.generateGasGiantSprite({ type: gasGiantType, radius, seed });
+    }
+
+    // Convert old type names to new ones
+    const typeMapping = {
+      'terran_planet': 'terran',
+      'rocky_planet': 'rocky',
+      'desert_planet': 'desert',
+      'ice_planet': 'ice',
+      'volcanic_planet': 'lava',
+      'lava_planet': 'lava',
+      'ocean_planet': 'ocean',
+      'frozen_planet': 'frozen',
+      'tundra_planet': 'tundra',
+      'carbon_planet': 'carbon',
+      'crystal_planet': 'crystal',
+      'metal_planet': 'metal',
+      'eyeball_planet': 'eyeball',
+      'tidally_locked_planet': 'tidally_locked',
+      'super_earth': 'terran'
+    };
+
+    const normalizedType = typeMapping[type] || type;
+    const cacheKey = `planet_${normalizedType}_${Math.floor(seed)}`;
 
     if (this.spriteCache.has(cacheKey)) {
       return this.spriteCache.get(cacheKey);
     }
 
-    console.log(`[CelestialSpriteGenerator] Loading ${type} planet sprite from file...`);
+    console.log(`[CelestialSpriteGenerator] Loading ${normalizedType} planet sprite from file...`);
 
     try {
       // FIX: Count available sprites for this type from manifest
-      const availableSprites = this.countAvailableSprites('planets', type);
+      const availableSprites = this.countAvailableSprites('planets', normalizedType);
       const index = availableSprites > 0 ? Math.floor(seed) % availableSprites : 0;
-      console.log(`[CelestialSpriteGenerator] ${type} has ${availableSprites} variants, using index ${index}`);
+      console.log(`[CelestialSpriteGenerator] ${normalizedType} has ${availableSprites} variants, using index ${index}`);
 
-      const spriteData = await this.spriteLoader.loadPlanetSprite(type, index);
+      const spriteData = await this.spriteLoader.loadPlanetSprite(normalizedType, index);
 
       if (!spriteData) {
-        console.error(`[CelestialSpriteGenerator] Failed to load planet sprite for type ${type} index ${index}`);
+        console.error(`[CelestialSpriteGenerator] Failed to load planet sprite for type ${normalizedType} index ${index}`);
         return null;
       }
 
@@ -273,6 +308,138 @@ export class CelestialSpriteGenerator {
   }
 
   /**
+   * Generate gas giant sprite by loading from file
+   */
+  async generateGasGiantSprite(config) {
+    const {
+      type = 'jovian_orange',
+      radius = 256,
+      seed = Math.random() * 10000
+    } = config;
+
+    const cacheKey = `gas_giant_${type}_${Math.floor(seed)}`;
+
+    if (this.spriteCache.has(cacheKey)) {
+      return this.spriteCache.get(cacheKey);
+    }
+
+    console.log(`[CelestialSpriteGenerator] Loading ${type} gas giant sprite from file...`);
+
+    try {
+      const availableSprites = this.countAvailableSprites('gas_giants', type);
+      const index = availableSprites > 0 ? Math.floor(seed) % availableSprites : 0;
+      console.log(`[CelestialSpriteGenerator] ${type} gas giants have ${availableSprites} variants, using index ${index}`);
+
+      const spriteData = await this.spriteLoader.loadGasGiantSprite(type, index);
+
+      if (!spriteData) {
+        console.error(`[CelestialSpriteGenerator] Failed to load gas giant sprite for type ${type} index ${index}`);
+        return null;
+      }
+
+      const result = {
+        name: cacheKey,
+        image: spriteData.image,
+        width: spriteData.image.width,
+        height: spriteData.image.height,
+        frameWidth: spriteData.frameWidth,
+        frameHeight: spriteData.frameHeight,
+        cols: spriteData.cols,
+        rows: spriteData.rows,
+        frameCount: spriteData.frameCount,
+        frames: []
+      };
+
+      // Create frame metadata
+      for (let i = 0; i < spriteData.frameCount; i++) {
+        const col = i % result.cols;
+        const row = Math.floor(i / result.cols);
+        result.frames.push({
+          index: i,
+          x: col * result.frameWidth,
+          y: row * result.frameHeight,
+          width: result.frameWidth,
+          height: result.frameHeight
+        });
+      }
+
+      this.spriteCache.set(cacheKey, result);
+      console.log(`[CelestialSpriteGenerator] ✓ Gas giant sprite loaded: ${cacheKey}`);
+
+      return result;
+    } catch (error) {
+      console.error('[CelestialSpriteGenerator] Error loading gas giant sprite:', error);
+      return null;
+    }
+  }
+
+  /**
+   * Generate black hole sprite by loading from file
+   */
+  async generateBlackHoleSprite(config) {
+    const {
+      type = 'stellar',
+      radius = 256,
+      seed = Math.random() * 10000
+    } = config;
+
+    const cacheKey = `black_hole_${type}_${Math.floor(seed)}`;
+
+    if (this.spriteCache.has(cacheKey)) {
+      return this.spriteCache.get(cacheKey);
+    }
+
+    console.log(`[CelestialSpriteGenerator] Loading ${type} black hole sprite from file...`);
+
+    try {
+      const availableSprites = this.countAvailableSprites('black_holes', type);
+      const index = availableSprites > 0 ? Math.floor(seed) % availableSprites : 0;
+      console.log(`[CelestialSpriteGenerator] ${type} black holes have ${availableSprites} variants, using index ${index}`);
+
+      const spriteData = await this.spriteLoader.loadBlackHoleSprite(type, index);
+
+      if (!spriteData) {
+        console.error(`[CelestialSpriteGenerator] Failed to load black hole sprite for type ${type} index ${index}`);
+        return null;
+      }
+
+      const result = {
+        name: cacheKey,
+        image: spriteData.image,
+        width: spriteData.image.width,
+        height: spriteData.image.height,
+        frameWidth: spriteData.frameWidth,
+        frameHeight: spriteData.frameHeight,
+        cols: spriteData.cols,
+        rows: spriteData.rows,
+        frameCount: spriteData.frameCount,
+        frames: []
+      };
+
+      // Create frame metadata
+      for (let i = 0; i < spriteData.frameCount; i++) {
+        const col = i % result.cols;
+        const row = Math.floor(i / result.cols);
+        result.frames.push({
+          index: i,
+          x: col * result.frameWidth,
+          y: row * result.frameHeight,
+          width: result.frameWidth,
+          height: result.frameHeight
+        });
+      }
+
+      this.spriteCache.set(cacheKey, result);
+      console.log(`[CelestialSpriteGenerator] ✓ Black hole sprite loaded: ${cacheKey}`);
+
+      return result;
+    } catch (error) {
+      console.error('[CelestialSpriteGenerator] Error loading black hole sprite:', error);
+      return null;
+    }
+  }
+
+  /**
    * Generate asteroid sprite by loading from file
    */
   async generateAsteroidSprite(config) {
@@ -366,17 +533,17 @@ export class CelestialSpriteGenerator {
         // Map planet types to new system
         let planetType = planet.type || planet.planetType || 'rocky';
 
-        // Convert old type names to new ones
+        // Gas giants and other mappings are now handled in generatePlanetSprite
+        // This mapping is kept for backward compatibility only
         const typeMapping = {
           'terran_planet': 'terran',
           'rocky_planet': 'rocky',
           'desert_planet': 'desert',
           'ice_planet': 'ice',
-          'gas_giant': 'terran',  // Fallback to terran for now
-          'ice_giant': 'ice',
           'volcanic_planet': 'lava',
           'lava_planet': 'lava',
-          'ocean_planet': 'ocean'
+          'ocean_planet': 'ocean',
+          'super_earth': 'terran'
         };
 
         planetType = typeMapping[planetType] || planetType;
@@ -479,7 +646,7 @@ export class CelestialSpriteGenerator {
 
     const sprites = this.spriteLoader.manifest.sprites[category];
 
-    if (category === 'planets' && type) {
+    if ((category === 'planets' || category === 'gas_giants' || category === 'black_holes') && type) {
       // Count sprites matching the type pattern (e.g., 'terran_000', 'terran_001')
       const prefix = `${type}_`;
       const count = Object.keys(sprites).filter(key => key.startsWith(prefix)).length;

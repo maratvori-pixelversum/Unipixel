@@ -255,6 +255,74 @@ export class SpriteFileLoader {
   }
 
   /**
+   * Load gas giant sprite
+   */
+  async loadGasGiantSprite(type, index = 0) {
+    if (!this.manifest) {
+      await this.loadManifest();
+    }
+
+    const key = `${type}_${String(index).padStart(3, '0')}`;
+
+    if (!this.manifest || !this.manifest.sprites.gas_giants[key]) {
+      console.warn(`[SpriteFileLoader] No sprite file for gas giant: ${key}`);
+      return null;
+    }
+
+    const spriteInfo = this.manifest.sprites.gas_giants[key];
+
+    try {
+      const image = await this.loadSpriteImage(spriteInfo.file);
+
+      return {
+        image,
+        frameWidth: spriteInfo.width / spriteInfo.frames,
+        frameHeight: spriteInfo.height,
+        frameCount: spriteInfo.frames,
+        cols: spriteInfo.frames,
+        rows: 1
+      };
+    } catch (error) {
+      console.error(`[SpriteFileLoader] Error loading gas giant sprite ${key}:`, error);
+      return null;
+    }
+  }
+
+  /**
+   * Load black hole sprite
+   */
+  async loadBlackHoleSprite(type, index = 0) {
+    if (!this.manifest) {
+      await this.loadManifest();
+    }
+
+    const key = `${type}_${String(index).padStart(3, '0')}`;
+
+    if (!this.manifest || !this.manifest.sprites.black_holes[key]) {
+      console.warn(`[SpriteFileLoader] No sprite file for black hole: ${key}`);
+      return null;
+    }
+
+    const spriteInfo = this.manifest.sprites.black_holes[key];
+
+    try {
+      const image = await this.loadSpriteImage(spriteInfo.file);
+
+      return {
+        image,
+        frameWidth: spriteInfo.width / spriteInfo.frames,
+        frameHeight: spriteInfo.height,
+        frameCount: spriteInfo.frames,
+        cols: spriteInfo.frames,
+        rows: 1
+      };
+    } catch (error) {
+      console.error(`[SpriteFileLoader] Error loading black hole sprite ${key}:`, error);
+      return null;
+    }
+  }
+
+  /**
    * Check if sprites are available
    */
   async hasSprites() {
@@ -278,10 +346,12 @@ export class SpriteFileLoader {
       loaded: true,
       version: this.manifest.version,
       loadedImages: this.loadedSprites.size,
-      stars: Object.keys(this.manifest.sprites.stars).length,
-      planets: Object.keys(this.manifest.sprites.planets).length,
-      moons: Object.keys(this.manifest.sprites.moons).length,
-      asteroids: Object.keys(this.manifest.sprites.asteroids).length
+      stars: Object.keys(this.manifest.sprites.stars || {}).length,
+      planets: Object.keys(this.manifest.sprites.planets || {}).length,
+      moons: Object.keys(this.manifest.sprites.moons || {}).length,
+      asteroids: Object.keys(this.manifest.sprites.asteroids || {}).length,
+      gas_giants: Object.keys(this.manifest.sprites.gas_giants || {}).length,
+      black_holes: Object.keys(this.manifest.sprites.black_holes || {}).length
     };
   }
 }

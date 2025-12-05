@@ -239,10 +239,20 @@ export class StellarRenderer {
     if (this.game && this.game.spriteManager) {
       const cached = this.game.spriteManager.getSprite(spriteId);
       if (cached && cached.sprite && cached.sprite.frameWidth) {
+        // The sprite frames are already sized for the star
+        // Scale to match the desired radius (diameter / frameWidth)
+        // Since frameWidth represents the full star diameter in the sprite
         const spriteScale = (radius * 2) / cached.sprite.frameWidth;
+
+        // Cap the scale to prevent stars from being too large and getting cut off
+        const maxScale = 2.0; // Maximum 2x the original sprite size
+        const finalScale = Math.min(spriteScale, maxScale);
+
         const rendered = this.game.spriteManager.renderAnimatedSprite(ctx, spriteId, x, y, this.time, {
-          scale: spriteScale,
-          alpha: 1.0
+          scale: finalScale,
+          alpha: 1.0,
+          camX: this.game.camera?.x || 0,
+          camY: this.game.camera?.y || 0
         });
         if (rendered) {
           ctx.restore();

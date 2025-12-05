@@ -285,6 +285,94 @@
         "height": 289
       }
     },
+    "gas_giants": {
+      "green_giant_000": {
+        "file": "gas_giants/gas_giant_green_giant_000.png",
+        "frames": 32,
+        "width": 57600,
+        "height": 1800
+      },
+      "hot_jupiter_000": {
+        "file": "gas_giants/gas_giant_hot_jupiter_000.png",
+        "frames": 32,
+        "width": 38400,
+        "height": 1200
+      },
+      "ice_giant_blue_000": {
+        "file": "gas_giants/gas_giant_ice_giant_blue_000.png",
+        "frames": 32,
+        "width": 51200,
+        "height": 1600
+      },
+      "ice_giant_teal_000": {
+        "file": "gas_giants/gas_giant_ice_giant_teal_000.png",
+        "frames": 32,
+        "width": 57600,
+        "height": 1800
+      },
+      "jovian_orange_000": {
+        "file": "gas_giants/gas_giant_jovian_orange_000.png",
+        "frames": 32,
+        "width": 44800,
+        "height": 1400
+      },
+      "jovian_tan_000": {
+        "file": "gas_giants/gas_giant_jovian_tan_000.png",
+        "frames": 32,
+        "width": 38400,
+        "height": 1200
+      },
+      "purple_giant_000": {
+        "file": "gas_giants/gas_giant_purple_giant_000.png",
+        "frames": 32,
+        "width": 51200,
+        "height": 1600
+      },
+      "ringed_giant_000": {
+        "file": "gas_giants/gas_giant_ringed_giant_000.png",
+        "frames": 32,
+        "width": 38400,
+        "height": 1200
+      },
+      "storm_giant_000": {
+        "file": "gas_giants/gas_giant_storm_giant_000.png",
+        "frames": 32,
+        "width": 44800,
+        "height": 1400
+      }
+    },
+    "black_holes": {
+      "active_quasar_000": {
+        "file": "black_holes/black_hole_active_quasar_000.png",
+        "frames": 24,
+        "width": 28800,
+        "height": 1200
+      },
+      "dormant_000": {
+        "file": "black_holes/black_hole_dormant_000.png",
+        "frames": 24,
+        "width": 38400,
+        "height": 1600
+      },
+      "intermediate_000": {
+        "file": "black_holes/black_hole_intermediate_000.png",
+        "frames": 24,
+        "width": 38400,
+        "height": 1600
+      },
+      "stellar_000": {
+        "file": "black_holes/black_hole_stellar_000.png",
+        "frames": 24,
+        "width": 28800,
+        "height": 1200
+      },
+      "supermassive_000": {
+        "file": "black_holes/black_hole_supermassive_000.png",
+        "frames": 24,
+        "width": 48000,
+        "height": 2000
+      }
+    },
     "asteroids": {
       "000": {
         "file": "asteroids/asteroid_000.png",
