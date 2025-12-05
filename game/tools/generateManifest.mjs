@@ -29,7 +29,7 @@ async function getPNGDimensions(filePath) {
 const CONFIG = {
   spritesPerPlanetType: 3,
   spritesPerMoon: 80,
-  spritesPerAsteroid: 80,
+  spritesPerAsteroid: 200,  // Increased for more asteroid diversity
   stellarClasses: ['O', 'B', 'A', 'F', 'G', 'K', 'M', 'BrownDwarf', 'WhiteDwarf', 'NeutronStar', 'Pulsar', 'RedGiant', 'BlueGiant', 'RedSuperGiant', 'BlueSuperGiant'],
   planetTypes: ['terran', 'rocky', 'desert', 'ice', 'frozen', 'tundra', 'lava', 'volcanic', 'ocean', 'carbon', 'crystal', 'metal', 'eyeball', 'tidally_locked', 'radioactive', 'super_earth', 'jungle', 'gas_giant', 'ice_giant']
 };
@@ -49,16 +49,17 @@ async function generateManifest() {
     }
   };
 
-  // STARS: Read actual dimensions (8 frames for slower rotation)
+  // STARS: Read actual dimensions and calculate frames
   console.log('Reading star sprite dimensions...');
   for (const stellarClass of CONFIG.stellarClasses) {
-    const filePath = path.join(OUTPUT_DIR, 'stars', `star_${stellarClass}.png`);
+    const filePath = path.join(OUTPUT_DIR, 'stars', `star_${stellarClass}_000.png`);
     if (fs.existsSync(filePath)) {
       const dims = await getPNGDimensions(filePath);
       if (dims) {
+        const frames = Math.round(dims.width / dims.height);
         manifest.sprites.stars[stellarClass] = {
-          file: `stars/star_${stellarClass}.png`,
-          frames: 8,
+          file: `stars/star_${stellarClass}_000.png`,
+          frames: frames,
           width: dims.width,
           height: dims.height
         };
@@ -66,7 +67,7 @@ async function generateManifest() {
     }
   }
 
-  // PLANETS: Read actual dimensions (24 frames for full rotation)
+  // PLANETS: Read actual dimensions and calculate frames
   console.log('Reading planet sprite dimensions...');
   for (const planetType of CONFIG.planetTypes) {
     for (let i = 0; i < CONFIG.spritesPerPlanetType; i++) {
@@ -75,9 +76,10 @@ async function generateManifest() {
       if (fs.existsSync(filePath)) {
         const dims = await getPNGDimensions(filePath);
         if (dims) {
+          const frames = Math.round(dims.width / dims.height);
           manifest.sprites.planets[key] = {
             file: `planets/planet_${planetType}_${String(i).padStart(3, '0')}.png`,
-            frames: 24,
+            frames: frames,
             width: dims.width,
             height: dims.height
           };
@@ -86,16 +88,17 @@ async function generateManifest() {
     }
   }
 
-  // MOONS: Read actual dimensions (variable sizes, 16 frames)
+  // MOONS: Read actual dimensions and calculate frames
   console.log('Reading moon sprite dimensions...');
   for (let i = 0; i < CONFIG.spritesPerMoon; i++) {
     const filePath = path.join(OUTPUT_DIR, 'moons', `moon_${String(i).padStart(3, '0')}.png`);
     if (fs.existsSync(filePath)) {
       const dims = await getPNGDimensions(filePath);
       if (dims) {
+        const frames = Math.round(dims.width / dims.height);
         manifest.sprites.moons[String(i).padStart(3, '0')] = {
           file: `moons/moon_${String(i).padStart(3, '0')}.png`,
-          frames: 16,
+          frames: frames,
           width: dims.width,
           height: dims.height
         };
@@ -103,16 +106,17 @@ async function generateManifest() {
     }
   }
 
-  // ASTEROIDS: Read actual dimensions (variable sizes, 12 frames)
+  // ASTEROIDS: Read actual dimensions and calculate frames
   console.log('Reading asteroid sprite dimensions...');
   for (let i = 0; i < CONFIG.spritesPerAsteroid; i++) {
     const filePath = path.join(OUTPUT_DIR, 'asteroids', `asteroid_${String(i).padStart(3, '0')}.png`);
     if (fs.existsSync(filePath)) {
       const dims = await getPNGDimensions(filePath);
       if (dims) {
+        const frames = Math.round(dims.width / dims.height);
         manifest.sprites.asteroids[String(i).padStart(3, '0')] = {
           file: `asteroids/asteroid_${String(i).padStart(3, '0')}.png`,
-          frames: 12,
+          frames: frames,
           width: dims.width,
           height: dims.height
         };

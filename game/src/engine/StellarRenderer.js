@@ -234,6 +234,23 @@ export class StellarRenderer {
       return;
     }
 
+    // Try to render with sprite first
+    const spriteId = `star_${stellarData.class}_${seed}`;
+    if (this.game && this.game.spriteManager) {
+      const cached = this.game.spriteManager.getSprite(spriteId);
+      if (cached && cached.sprite && cached.sprite.frameWidth) {
+        const spriteScale = (radius * 2) / cached.sprite.frameWidth;
+        const rendered = this.game.spriteManager.renderAnimatedSprite(ctx, spriteId, x, y, this.time, {
+          scale: spriteScale,
+          alpha: 1.0
+        });
+        if (rendered) {
+          ctx.restore();
+          return;
+        }
+      }
+    }
+
     // HEAVILY PIXELATED surface - hundreds of tiny pixels for maximum detail
     // PERFORMANCE: Larger pixelSize = fewer pixels to calculate, better FPS
     // CRITICAL: Must be VERY large for procedural fallback to avoid 1 FPS lag

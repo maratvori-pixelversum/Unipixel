@@ -158,8 +158,11 @@ export class CelestialSpriteGenerator {
     console.log(`[CelestialSpriteGenerator] Loading ${type} planet sprite from file...`);
 
     try {
-      // Use seed to select which of the 80 variants to load
-      const index = Math.floor(seed) % 80;
+      // FIX: Count available sprites for this type from manifest
+      const availableSprites = this.countAvailableSprites('planets', type);
+      const index = availableSprites > 0 ? Math.floor(seed) % availableSprites : 0;
+      console.log(`[CelestialSpriteGenerator] ${type} has ${availableSprites} variants, using index ${index}`);
+
       const spriteData = await this.spriteLoader.loadPlanetSprite(type, index);
 
       if (!spriteData) {
@@ -222,8 +225,10 @@ export class CelestialSpriteGenerator {
     console.log(`[CelestialSpriteGenerator] Loading moon sprite from file...`);
 
     try {
-      // Use seed to select which of the 80 variants to load
-      const index = Math.floor(seed) % 80;
+      // Count available sprites and select variant based on seed
+      const availableSprites = this.countAvailableSprites('moons');
+      const index = availableSprites > 0 ? Math.floor(seed) % availableSprites : 0;
+      console.log(`[CelestialSpriteGenerator] Moons have ${availableSprites} variants, using index ${index}`);
       const spriteData = await this.spriteLoader.loadMoonSprite(index);
 
       if (!spriteData) {
@@ -285,8 +290,10 @@ export class CelestialSpriteGenerator {
     console.log(`[CelestialSpriteGenerator] Loading asteroid sprite from file...`);
 
     try {
-      // Use seed to select which of the 80 variants to load
-      const index = Math.floor(seed) % 80;
+      // Count available sprites and select variant based on seed
+      const availableSprites = this.countAvailableSprites('asteroids');
+      const index = availableSprites > 0 ? Math.floor(seed) % availableSprites : 0;
+      console.log(`[CelestialSpriteGenerator] Asteroids have ${availableSprites} variants, using index ${index}`);
       const spriteData = await this.spriteLoader.loadAsteroidSprite(index);
 
       if (!spriteData) {
@@ -456,6 +463,31 @@ export class CelestialSpriteGenerator {
    */
   getSpriteSheetGenerator() {
     return this;
+  }
+
+  /**
+   * Count available sprite variants for a given category and type
+   * @param {string} category - 'planets', 'moons', or 'asteroids'
+   * @param {string} type - For planets: type name (e.g., 'terran'), ignored for moons/asteroids
+   * @returns {number} Number of available variants
+   */
+  countAvailableSprites(category, type = null) {
+    if (!this.spriteLoader.manifest || !this.spriteLoader.manifest.sprites[category]) {
+      console.warn(`[CelestialSpriteGenerator] Manifest not loaded or category ${category} not found`);
+      return 0;
+    }
+
+    const sprites = this.spriteLoader.manifest.sprites[category];
+
+    if (category === 'planets' && type) {
+      // Count sprites matching the type pattern (e.g., 'terran_000', 'terran_001')
+      const prefix = `${type}_`;
+      const count = Object.keys(sprites).filter(key => key.startsWith(prefix)).length;
+      return count;
+    } else {
+      // For moons and asteroids, count all entries
+      return Object.keys(sprites).length;
+    }
   }
 
   /**

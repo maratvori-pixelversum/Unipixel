@@ -1,93 +1,105 @@
 {
   "version": "4.0.0",
-  "generated": "2025-12-04T14:35:06.284Z",
+  "generated": "2025-12-05T00:18:23.861Z",
   "description": "Ultra high-detail sprites with variable sizes and organic terrain features",
   "sprites": {
     "stars": {
       "O": {
-        "file": "stars/star_O.png",
-        "frames": 8,
-        "width": 11200,
+        "file": "stars/star_O_000.png",
+        "frames": 24,
+        "width": 33600,
         "height": 1400
       },
       "B": {
-        "file": "stars/star_B.png",
-        "frames": 8,
-        "width": 10400,
+        "file": "stars/star_B_000.png",
+        "frames": 24,
+        "width": 31200,
         "height": 1300
       },
       "A": {
-        "file": "stars/star_A.png",
-        "frames": 8,
-        "width": 8800,
+        "file": "stars/star_A_000.png",
+        "frames": 24,
+        "width": 26400,
         "height": 1100
       },
       "F": {
-        "file": "stars/star_F.png",
-        "frames": 8,
-        "width": 9600,
+        "file": "stars/star_F_000.png",
+        "frames": 24,
+        "width": 28800,
         "height": 1200
       },
       "G": {
-        "file": "stars/star_G.png",
-        "frames": 8,
-        "width": 9600,
+        "file": "stars/star_G_000.png",
+        "frames": 24,
+        "width": 28800,
         "height": 1200
       },
       "K": {
-        "file": "stars/star_K.png",
-        "frames": 8,
-        "width": 7200,
+        "file": "stars/star_K_000.png",
+        "frames": 24,
+        "width": 21600,
         "height": 900
       },
       "M": {
-        "file": "stars/star_M.png",
-        "frames": 8,
-        "width": 4800,
+        "file": "stars/star_M_000.png",
+        "frames": 24,
+        "width": 14400,
         "height": 600
       },
       "BrownDwarf": {
-        "file": "stars/star_BrownDwarf.png",
-        "frames": 8,
-        "width": 4800,
+        "file": "stars/star_BrownDwarf_000.png",
+        "frames": 24,
+        "width": 14400,
         "height": 600
       },
       "WhiteDwarf": {
-        "file": "stars/star_WhiteDwarf.png",
-        "frames": 8,
-        "width": 4800,
+        "file": "stars/star_WhiteDwarf_000.png",
+        "frames": 24,
+        "width": 14400,
         "height": 600
       },
       "NeutronStar": {
-        "file": "stars/star_NeutronStar.png",
-        "frames": 8,
-        "width": 2800,
+        "file": "stars/star_NeutronStar_000.png",
+        "frames": 24,
+        "width": 8400,
         "height": 350
       },
       "Pulsar": {
-        "file": "stars/star_Pulsar.png",
-        "frames": 8,
-        "width": 3200,
+        "file": "stars/star_Pulsar_000.png",
+        "frames": 24,
+        "width": 9600,
         "height": 400
       },
       "RedGiant": {
-        "file": "stars/star_RedGiant.png",
-        "frames": 8,
-        "width": 12000,
+        "file": "stars/star_RedGiant_000.png",
+        "frames": 24,
+        "width": 36000,
         "height": 1500
       },
       "BlueGiant": {
-        "file": "stars/star_BlueGiant.png",
-        "frames": 8,
-        "width": 12000,
+        "file": "stars/star_BlueGiant_000.png",
+        "frames": 24,
+        "width": 36000,
+        "height": 1500
+      },
+      "RedSuperGiant": {
+        "file": "stars/star_RedSuperGiant_000.png",
+        "frames": 24,
+        "width": 38400,
+        "height": 1600
+      },
+      "BlueSuperGiant": {
+        "file": "stars/star_BlueSuperGiant_000.png",
+        "frames": 24,
+        "width": 36000,
         "height": 1500
       }
     },
     "planets": {
       "terran_000": {
         "file": "planets/planet_terran_000.png",
-        "frames": 24,
-        "width": 19200,
+        "frames": 32,
+        "width": 25600,
         "height": 800
       },
       "terran_001": {
@@ -96,399 +108,783 @@
         "width": 19200,
         "height": 800
       },
-      "terran_002": {
-        "file": "planets/planet_terran_002.png",
-        "frames": 24,
-        "width": 19200,
-        "height": 800
-      },
       "rocky_000": {
         "file": "planets/planet_rocky_000.png",
-        "frames": 24,
-        "width": 14400,
-        "height": 600
+        "frames": 32,
+        "width": 25600,
+        "height": 800
       },
       "rocky_001": {
         "file": "planets/planet_rocky_001.png",
         "frames": 24,
-        "width": 14400,
-        "height": 600
-      },
-      "rocky_002": {
-        "file": "planets/planet_rocky_002.png",
-        "frames": 24,
-        "width": 14400,
-        "height": 600
+        "width": 19200,
+        "height": 800
       },
       "desert_000": {
         "file": "planets/planet_desert_000.png",
-        "frames": 24,
-        "width": 16800,
-        "height": 700
-      },
-      "desert_001": {
-        "file": "planets/planet_desert_001.png",
-        "frames": 24,
-        "width": 16800,
-        "height": 700
-      },
-      "desert_002": {
-        "file": "planets/planet_desert_002.png",
-        "frames": 24,
-        "width": 16800,
-        "height": 700
+        "frames": 32,
+        "width": 25600,
+        "height": 800
       },
       "ice_000": {
         "file": "planets/planet_ice_000.png",
-        "frames": 24,
-        "width": 15600,
-        "height": 650
-      },
-      "ice_001": {
-        "file": "planets/planet_ice_001.png",
-        "frames": 24,
-        "width": 15600,
-        "height": 650
-      },
-      "ice_002": {
-        "file": "planets/planet_ice_002.png",
-        "frames": 24,
-        "width": 15600,
-        "height": 650
+        "frames": 32,
+        "width": 25600,
+        "height": 800
       },
       "frozen_000": {
         "file": "planets/planet_frozen_000.png",
-        "frames": 24,
-        "width": 14400,
-        "height": 600
-      },
-      "frozen_001": {
-        "file": "planets/planet_frozen_001.png",
-        "frames": 24,
-        "width": 14400,
-        "height": 600
-      },
-      "frozen_002": {
-        "file": "planets/planet_frozen_002.png",
-        "frames": 24,
-        "width": 14400,
-        "height": 600
+        "frames": 32,
+        "width": 25600,
+        "height": 800
       },
       "tundra_000": {
         "file": "planets/planet_tundra_000.png",
-        "frames": 24,
-        "width": 15600,
-        "height": 650
-      },
-      "tundra_001": {
-        "file": "planets/planet_tundra_001.png",
-        "frames": 24,
-        "width": 15600,
-        "height": 650
-      },
-      "tundra_002": {
-        "file": "planets/planet_tundra_002.png",
-        "frames": 24,
-        "width": 15600,
-        "height": 650
+        "frames": 32,
+        "width": 25600,
+        "height": 800
       },
       "lava_000": {
         "file": "planets/planet_lava_000.png",
-        "frames": 24,
-        "width": 15600,
-        "height": 650
-      },
-      "lava_001": {
-        "file": "planets/planet_lava_001.png",
-        "frames": 24,
-        "width": 15600,
-        "height": 650
-      },
-      "lava_002": {
-        "file": "planets/planet_lava_002.png",
-        "frames": 24,
-        "width": 15600,
-        "height": 650
+        "frames": 32,
+        "width": 25600,
+        "height": 800
       },
       "volcanic_000": {
         "file": "planets/planet_volcanic_000.png",
-        "frames": 24,
-        "width": 16800,
-        "height": 700
-      },
-      "volcanic_001": {
-        "file": "planets/planet_volcanic_001.png",
-        "frames": 24,
-        "width": 16800,
-        "height": 700
-      },
-      "volcanic_002": {
-        "file": "planets/planet_volcanic_002.png",
-        "frames": 24,
-        "width": 16800,
-        "height": 700
+        "frames": 32,
+        "width": 25600,
+        "height": 800
       },
       "ocean_000": {
         "file": "planets/planet_ocean_000.png",
-        "frames": 24,
-        "width": 20400,
-        "height": 850
-      },
-      "ocean_001": {
-        "file": "planets/planet_ocean_001.png",
-        "frames": 24,
-        "width": 20400,
-        "height": 850
-      },
-      "ocean_002": {
-        "file": "planets/planet_ocean_002.png",
-        "frames": 24,
-        "width": 20400,
-        "height": 850
+        "frames": 32,
+        "width": 25600,
+        "height": 800
       },
       "carbon_000": {
         "file": "planets/planet_carbon_000.png",
-        "frames": 24,
-        "width": 14400,
-        "height": 600
-      },
-      "carbon_001": {
-        "file": "planets/planet_carbon_001.png",
-        "frames": 24,
-        "width": 14400,
-        "height": 600
-      },
-      "carbon_002": {
-        "file": "planets/planet_carbon_002.png",
-        "frames": 24,
-        "width": 14400,
-        "height": 600
+        "frames": 32,
+        "width": 25600,
+        "height": 800
       },
       "crystal_000": {
         "file": "planets/planet_crystal_000.png",
-        "frames": 24,
-        "width": 14400,
-        "height": 600
-      },
-      "crystal_001": {
-        "file": "planets/planet_crystal_001.png",
-        "frames": 24,
-        "width": 14400,
-        "height": 600
-      },
-      "crystal_002": {
-        "file": "planets/planet_crystal_002.png",
-        "frames": 24,
-        "width": 14400,
-        "height": 600
+        "frames": 32,
+        "width": 25600,
+        "height": 800
       },
       "metal_000": {
         "file": "planets/planet_metal_000.png",
-        "frames": 24,
-        "width": 13200,
-        "height": 550
-      },
-      "metal_001": {
-        "file": "planets/planet_metal_001.png",
-        "frames": 24,
-        "width": 13200,
-        "height": 550
-      },
-      "metal_002": {
-        "file": "planets/planet_metal_002.png",
-        "frames": 24,
-        "width": 13200,
-        "height": 550
+        "frames": 32,
+        "width": 25600,
+        "height": 800
       },
       "eyeball_000": {
         "file": "planets/planet_eyeball_000.png",
-        "frames": 24,
-        "width": 15600,
-        "height": 650
-      },
-      "eyeball_001": {
-        "file": "planets/planet_eyeball_001.png",
-        "frames": 24,
-        "width": 15600,
-        "height": 650
-      },
-      "eyeball_002": {
-        "file": "planets/planet_eyeball_002.png",
-        "frames": 24,
-        "width": 15600,
-        "height": 650
+        "frames": 32,
+        "width": 25600,
+        "height": 800
       },
       "tidally_locked_000": {
         "file": "planets/planet_tidally_locked_000.png",
-        "frames": 24,
-        "width": 15600,
-        "height": 650
-      },
-      "tidally_locked_001": {
-        "file": "planets/planet_tidally_locked_001.png",
-        "frames": 24,
-        "width": 15600,
-        "height": 650
-      },
-      "tidally_locked_002": {
-        "file": "planets/planet_tidally_locked_002.png",
-        "frames": 24,
-        "width": 15600,
-        "height": 650
-      },
-      "radioactive_000": {
-        "file": "planets/planet_radioactive_000.png",
-        "frames": 24,
-        "width": 14400,
-        "height": 600
-      },
-      "radioactive_001": {
-        "file": "planets/planet_radioactive_001.png",
-        "frames": 24,
-        "width": 14400,
-        "height": 600
-      },
-      "radioactive_002": {
-        "file": "planets/planet_radioactive_002.png",
-        "frames": 24,
-        "width": 14400,
-        "height": 600
-      },
-      "super_earth_000": {
-        "file": "planets/planet_super_earth_000.png",
-        "frames": 24,
-        "width": 26400,
-        "height": 1100
-      },
-      "super_earth_001": {
-        "file": "planets/planet_super_earth_001.png",
-        "frames": 24,
-        "width": 26400,
-        "height": 1100
-      },
-      "super_earth_002": {
-        "file": "planets/planet_super_earth_002.png",
-        "frames": 24,
-        "width": 26400,
-        "height": 1100
-      },
-      "jungle_000": {
-        "file": "planets/planet_jungle_000.png",
-        "frames": 24,
-        "width": 20400,
-        "height": 850
-      },
-      "jungle_001": {
-        "file": "planets/planet_jungle_001.png",
-        "frames": 24,
-        "width": 20400,
-        "height": 850
-      },
-      "jungle_002": {
-        "file": "planets/planet_jungle_002.png",
-        "frames": 24,
-        "width": 20400,
-        "height": 850
-      },
-      "gas_giant_000": {
-        "file": "planets/planet_gas_giant_000.png",
-        "frames": 24,
-        "width": 33600,
-        "height": 1400
-      },
-      "gas_giant_001": {
-        "file": "planets/planet_gas_giant_001.png",
-        "frames": 24,
-        "width": 33600,
-        "height": 1400
-      },
-      "gas_giant_002": {
-        "file": "planets/planet_gas_giant_002.png",
-        "frames": 24,
-        "width": 16800,
-        "height": 1400
+        "frames": 32,
+        "width": 25600,
+        "height": 800
       }
     },
     "moons": {
       "000": {
         "file": "moons/moon_000.png",
-        "frames": 16,
-        "width": 4144,
-        "height": 259
+        "frames": 24,
+        "width": 6888,
+        "height": 287
       },
       "001": {
         "file": "moons/moon_001.png",
-        "frames": 16,
-        "width": 5696,
-        "height": 356
+        "frames": 24,
+        "width": 9312,
+        "height": 388
       },
       "002": {
         "file": "moons/moon_002.png",
-        "frames": 16,
-        "width": 4704,
-        "height": 294
+        "frames": 24,
+        "width": 7512,
+        "height": 313
       },
       "003": {
         "file": "moons/moon_003.png",
-        "frames": 16,
-        "width": 4848,
-        "height": 303
+        "frames": 24,
+        "width": 8088,
+        "height": 337
       },
       "004": {
         "file": "moons/moon_004.png",
-        "frames": 16,
-        "width": 6288,
-        "height": 393
+        "frames": 24,
+        "width": 7128,
+        "height": 297
+      },
+      "005": {
+        "file": "moons/moon_005.png",
+        "frames": 24,
+        "width": 6816,
+        "height": 284
+      },
+      "006": {
+        "file": "moons/moon_006.png",
+        "frames": 24,
+        "width": 6336,
+        "height": 264
+      },
+      "007": {
+        "file": "moons/moon_007.png",
+        "frames": 24,
+        "width": 7944,
+        "height": 331
+      },
+      "008": {
+        "file": "moons/moon_008.png",
+        "frames": 24,
+        "width": 6144,
+        "height": 256
+      },
+      "009": {
+        "file": "moons/moon_009.png",
+        "frames": 24,
+        "width": 6048,
+        "height": 252
+      },
+      "010": {
+        "file": "moons/moon_010.png",
+        "frames": 24,
+        "width": 6624,
+        "height": 276
+      },
+      "011": {
+        "file": "moons/moon_011.png",
+        "frames": 24,
+        "width": 7128,
+        "height": 297
+      },
+      "012": {
+        "file": "moons/moon_012.png",
+        "frames": 24,
+        "width": 8304,
+        "height": 346
+      },
+      "013": {
+        "file": "moons/moon_013.png",
+        "frames": 24,
+        "width": 8808,
+        "height": 367
+      },
+      "014": {
+        "file": "moons/moon_014.png",
+        "frames": 24,
+        "width": 6936,
+        "height": 289
       }
     },
     "asteroids": {
       "000": {
         "file": "asteroids/asteroid_000.png",
-        "frames": 12,
-        "width": 2736,
-        "height": 342
+        "frames": 16,
+        "width": 1920,
+        "height": 120
       },
       "001": {
         "file": "asteroids/asteroid_001.png",
-        "frames": 12,
-        "width": 2376,
-        "height": 297
+        "frames": 16,
+        "width": 2400,
+        "height": 150
       },
       "002": {
         "file": "asteroids/asteroid_002.png",
-        "frames": 12,
-        "width": 1992,
-        "height": 249
+        "frames": 16,
+        "width": 2880,
+        "height": 180
       },
       "003": {
         "file": "asteroids/asteroid_003.png",
-        "frames": 12,
-        "width": 2392,
-        "height": 299
+        "frames": 16,
+        "width": 3360,
+        "height": 210
       },
       "004": {
         "file": "asteroids/asteroid_004.png",
-        "frames": 12,
-        "width": 1992,
-        "height": 249
+        "frames": 16,
+        "width": 3840,
+        "height": 240
       },
       "005": {
         "file": "asteroids/asteroid_005.png",
-        "frames": 12,
-        "width": 2072,
-        "height": 259
+        "frames": 16,
+        "width": 4320,
+        "height": 270
       },
       "006": {
         "file": "asteroids/asteroid_006.png",
-        "frames": 12,
-        "width": 1952,
-        "height": 244
+        "frames": 16,
+        "width": 4800,
+        "height": 300
       },
       "007": {
         "file": "asteroids/asteroid_007.png",
-        "frames": 12,
-        "width": 1520,
-        "height": 190
+        "frames": 16,
+        "width": 5280,
+        "height": 330
+      },
+      "008": {
+        "file": "asteroids/asteroid_008.png",
+        "frames": 16,
+        "width": 5760,
+        "height": 360
+      },
+      "009": {
+        "file": "asteroids/asteroid_009.png",
+        "frames": 16,
+        "width": 6240,
+        "height": 390
+      },
+      "010": {
+        "file": "asteroids/asteroid_010.png",
+        "frames": 16,
+        "width": 6720,
+        "height": 420
+      },
+      "011": {
+        "file": "asteroids/asteroid_011.png",
+        "frames": 16,
+        "width": 7200,
+        "height": 450
+      },
+      "012": {
+        "file": "asteroids/asteroid_012.png",
+        "frames": 16,
+        "width": 1920,
+        "height": 120
+      },
+      "013": {
+        "file": "asteroids/asteroid_013.png",
+        "frames": 16,
+        "width": 2400,
+        "height": 150
+      },
+      "014": {
+        "file": "asteroids/asteroid_014.png",
+        "frames": 16,
+        "width": 2880,
+        "height": 180
+      },
+      "015": {
+        "file": "asteroids/asteroid_015.png",
+        "frames": 16,
+        "width": 3360,
+        "height": 210
+      },
+      "016": {
+        "file": "asteroids/asteroid_016.png",
+        "frames": 16,
+        "width": 3840,
+        "height": 240
+      },
+      "017": {
+        "file": "asteroids/asteroid_017.png",
+        "frames": 16,
+        "width": 4320,
+        "height": 270
+      },
+      "018": {
+        "file": "asteroids/asteroid_018.png",
+        "frames": 16,
+        "width": 4800,
+        "height": 300
+      },
+      "019": {
+        "file": "asteroids/asteroid_019.png",
+        "frames": 16,
+        "width": 5280,
+        "height": 330
+      },
+      "020": {
+        "file": "asteroids/asteroid_020.png",
+        "frames": 16,
+        "width": 5760,
+        "height": 360
+      },
+      "021": {
+        "file": "asteroids/asteroid_021.png",
+        "frames": 16,
+        "width": 6240,
+        "height": 390
+      },
+      "022": {
+        "file": "asteroids/asteroid_022.png",
+        "frames": 16,
+        "width": 6720,
+        "height": 420
+      },
+      "023": {
+        "file": "asteroids/asteroid_023.png",
+        "frames": 16,
+        "width": 7200,
+        "height": 450
+      },
+      "024": {
+        "file": "asteroids/asteroid_024.png",
+        "frames": 16,
+        "width": 1920,
+        "height": 120
+      },
+      "025": {
+        "file": "asteroids/asteroid_025.png",
+        "frames": 16,
+        "width": 2400,
+        "height": 150
+      },
+      "026": {
+        "file": "asteroids/asteroid_026.png",
+        "frames": 16,
+        "width": 2880,
+        "height": 180
+      },
+      "027": {
+        "file": "asteroids/asteroid_027.png",
+        "frames": 16,
+        "width": 3360,
+        "height": 210
+      },
+      "028": {
+        "file": "asteroids/asteroid_028.png",
+        "frames": 16,
+        "width": 3840,
+        "height": 240
+      },
+      "029": {
+        "file": "asteroids/asteroid_029.png",
+        "frames": 16,
+        "width": 4320,
+        "height": 270
+      },
+      "030": {
+        "file": "asteroids/asteroid_030.png",
+        "frames": 16,
+        "width": 4800,
+        "height": 300
+      },
+      "031": {
+        "file": "asteroids/asteroid_031.png",
+        "frames": 16,
+        "width": 5280,
+        "height": 330
+      },
+      "032": {
+        "file": "asteroids/asteroid_032.png",
+        "frames": 16,
+        "width": 5760,
+        "height": 360
+      },
+      "033": {
+        "file": "asteroids/asteroid_033.png",
+        "frames": 16,
+        "width": 6240,
+        "height": 390
+      },
+      "034": {
+        "file": "asteroids/asteroid_034.png",
+        "frames": 16,
+        "width": 6720,
+        "height": 420
+      },
+      "035": {
+        "file": "asteroids/asteroid_035.png",
+        "frames": 16,
+        "width": 7200,
+        "height": 450
+      },
+      "036": {
+        "file": "asteroids/asteroid_036.png",
+        "frames": 16,
+        "width": 1920,
+        "height": 120
+      },
+      "037": {
+        "file": "asteroids/asteroid_037.png",
+        "frames": 16,
+        "width": 2400,
+        "height": 150
+      },
+      "038": {
+        "file": "asteroids/asteroid_038.png",
+        "frames": 16,
+        "width": 2880,
+        "height": 180
+      },
+      "039": {
+        "file": "asteroids/asteroid_039.png",
+        "frames": 16,
+        "width": 3360,
+        "height": 210
+      },
+      "040": {
+        "file": "asteroids/asteroid_040.png",
+        "frames": 16,
+        "width": 3840,
+        "height": 240
+      },
+      "041": {
+        "file": "asteroids/asteroid_041.png",
+        "frames": 16,
+        "width": 4320,
+        "height": 270
+      },
+      "042": {
+        "file": "asteroids/asteroid_042.png",
+        "frames": 16,
+        "width": 4800,
+        "height": 300
+      },
+      "043": {
+        "file": "asteroids/asteroid_043.png",
+        "frames": 16,
+        "width": 5280,
+        "height": 330
+      },
+      "044": {
+        "file": "asteroids/asteroid_044.png",
+        "frames": 16,
+        "width": 5760,
+        "height": 360
+      },
+      "045": {
+        "file": "asteroids/asteroid_045.png",
+        "frames": 16,
+        "width": 6240,
+        "height": 390
+      },
+      "046": {
+        "file": "asteroids/asteroid_046.png",
+        "frames": 16,
+        "width": 6720,
+        "height": 420
+      },
+      "047": {
+        "file": "asteroids/asteroid_047.png",
+        "frames": 16,
+        "width": 7200,
+        "height": 450
+      },
+      "048": {
+        "file": "asteroids/asteroid_048.png",
+        "frames": 16,
+        "width": 1920,
+        "height": 120
+      },
+      "049": {
+        "file": "asteroids/asteroid_049.png",
+        "frames": 16,
+        "width": 2400,
+        "height": 150
+      },
+      "050": {
+        "file": "asteroids/asteroid_050.png",
+        "frames": 16,
+        "width": 2880,
+        "height": 180
+      },
+      "051": {
+        "file": "asteroids/asteroid_051.png",
+        "frames": 16,
+        "width": 3360,
+        "height": 210
+      },
+      "052": {
+        "file": "asteroids/asteroid_052.png",
+        "frames": 16,
+        "width": 3840,
+        "height": 240
+      },
+      "053": {
+        "file": "asteroids/asteroid_053.png",
+        "frames": 16,
+        "width": 4320,
+        "height": 270
+      },
+      "054": {
+        "file": "asteroids/asteroid_054.png",
+        "frames": 16,
+        "width": 4800,
+        "height": 300
+      },
+      "055": {
+        "file": "asteroids/asteroid_055.png",
+        "frames": 16,
+        "width": 5280,
+        "height": 330
+      },
+      "056": {
+        "file": "asteroids/asteroid_056.png",
+        "frames": 16,
+        "width": 5760,
+        "height": 360
+      },
+      "057": {
+        "file": "asteroids/asteroid_057.png",
+        "frames": 16,
+        "width": 6240,
+        "height": 390
+      },
+      "058": {
+        "file": "asteroids/asteroid_058.png",
+        "frames": 16,
+        "width": 6720,
+        "height": 420
+      },
+      "059": {
+        "file": "asteroids/asteroid_059.png",
+        "frames": 16,
+        "width": 7200,
+        "height": 450
+      },
+      "060": {
+        "file": "asteroids/asteroid_060.png",
+        "frames": 16,
+        "width": 1920,
+        "height": 120
+      },
+      "061": {
+        "file": "asteroids/asteroid_061.png",
+        "frames": 16,
+        "width": 2400,
+        "height": 150
+      },
+      "062": {
+        "file": "asteroids/asteroid_062.png",
+        "frames": 16,
+        "width": 2880,
+        "height": 180
+      },
+      "063": {
+        "file": "asteroids/asteroid_063.png",
+        "frames": 16,
+        "width": 3360,
+        "height": 210
+      },
+      "064": {
+        "file": "asteroids/asteroid_064.png",
+        "frames": 16,
+        "width": 3840,
+        "height": 240
+      },
+      "065": {
+        "file": "asteroids/asteroid_065.png",
+        "frames": 16,
+        "width": 4320,
+        "height": 270
+      },
+      "066": {
+        "file": "asteroids/asteroid_066.png",
+        "frames": 16,
+        "width": 4800,
+        "height": 300
+      },
+      "067": {
+        "file": "asteroids/asteroid_067.png",
+        "frames": 16,
+        "width": 5280,
+        "height": 330
+      },
+      "068": {
+        "file": "asteroids/asteroid_068.png",
+        "frames": 16,
+        "width": 5760,
+        "height": 360
+      },
+      "069": {
+        "file": "asteroids/asteroid_069.png",
+        "frames": 16,
+        "width": 6240,
+        "height": 390
+      },
+      "070": {
+        "file": "asteroids/asteroid_070.png",
+        "frames": 16,
+        "width": 6720,
+        "height": 420
+      },
+      "071": {
+        "file": "asteroids/asteroid_071.png",
+        "frames": 16,
+        "width": 7200,
+        "height": 450
+      },
+      "072": {
+        "file": "asteroids/asteroid_072.png",
+        "frames": 16,
+        "width": 1920,
+        "height": 120
+      },
+      "073": {
+        "file": "asteroids/asteroid_073.png",
+        "frames": 16,
+        "width": 2400,
+        "height": 150
+      },
+      "074": {
+        "file": "asteroids/asteroid_074.png",
+        "frames": 16,
+        "width": 2880,
+        "height": 180
+      },
+      "075": {
+        "file": "asteroids/asteroid_075.png",
+        "frames": 16,
+        "width": 3360,
+        "height": 210
+      },
+      "076": {
+        "file": "asteroids/asteroid_076.png",
+        "frames": 16,
+        "width": 3840,
+        "height": 240
+      },
+      "077": {
+        "file": "asteroids/asteroid_077.png",
+        "frames": 16,
+        "width": 4320,
+        "height": 270
+      },
+      "078": {
+        "file": "asteroids/asteroid_078.png",
+        "frames": 16,
+        "width": 4800,
+        "height": 300
+      },
+      "079": {
+        "file": "asteroids/asteroid_079.png",
+        "frames": 16,
+        "width": 5280,
+        "height": 330
+      },
+      "080": {
+        "file": "asteroids/asteroid_080.png",
+        "frames": 16,
+        "width": 5760,
+        "height": 360
+      },
+      "081": {
+        "file": "asteroids/asteroid_081.png",
+        "frames": 16,
+        "width": 6240,
+        "height": 390
+      },
+      "082": {
+        "file": "asteroids/asteroid_082.png",
+        "frames": 16,
+        "width": 6720,
+        "height": 420
+      },
+      "083": {
+        "file": "asteroids/asteroid_083.png",
+        "frames": 16,
+        "width": 7200,
+        "height": 450
+      },
+      "084": {
+        "file": "asteroids/asteroid_084.png",
+        "frames": 16,
+        "width": 1920,
+        "height": 120
+      },
+      "085": {
+        "file": "asteroids/asteroid_085.png",
+        "frames": 16,
+        "width": 2400,
+        "height": 150
+      },
+      "086": {
+        "file": "asteroids/asteroid_086.png",
+        "frames": 16,
+        "width": 2880,
+        "height": 180
+      },
+      "087": {
+        "file": "asteroids/asteroid_087.png",
+        "frames": 16,
+        "width": 3360,
+        "height": 210
+      },
+      "088": {
+        "file": "asteroids/asteroid_088.png",
+        "frames": 16,
+        "width": 3840,
+        "height": 240
+      },
+      "089": {
+        "file": "asteroids/asteroid_089.png",
+        "frames": 16,
+        "width": 4320,
+        "height": 270
+      },
+      "090": {
+        "file": "asteroids/asteroid_090.png",
+        "frames": 16,
+        "width": 4800,
+        "height": 300
+      },
+      "091": {
+        "file": "asteroids/asteroid_091.png",
+        "frames": 16,
+        "width": 5280,
+        "height": 330
+      },
+      "092": {
+        "file": "asteroids/asteroid_092.png",
+        "frames": 16,
+        "width": 5760,
+        "height": 360
+      },
+      "093": {
+        "file": "asteroids/asteroid_093.png",
+        "frames": 16,
+        "width": 6240,
+        "height": 390
+      },
+      "094": {
+        "file": "asteroids/asteroid_094.png",
+        "frames": 16,
+        "width": 6720,
+        "height": 420
+      },
+      "095": {
+        "file": "asteroids/asteroid_095.png",
+        "frames": 16,
+        "width": 7200,
+        "height": 450
+      },
+      "096": {
+        "file": "asteroids/asteroid_096.png",
+        "frames": 16,
+        "width": 1920,
+        "height": 120
+      },
+      "097": {
+        "file": "asteroids/asteroid_097.png",
+        "frames": 16,
+        "width": 2400,
+        "height": 150
+      },
+      "098": {
+        "file": "asteroids/asteroid_098.png",
+        "frames": 16,
+        "width": 2880,
+        "height": 180
+      },
+      "099": {
+        "file": "asteroids/asteroid_099.png",
+        "frames": 16,
+        "width": 3360,
+        "height": 210
       }
     }
   }
